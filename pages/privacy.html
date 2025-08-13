@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>隐私政策与使用条款 - 合肥工业学校建工部宣传外联部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/loading.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script>
+        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) {
+            window.location.href = "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
+        }
+    </script>
+    <style>
+        /* 隐私政策页面样式优化 */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .privacy-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .policy-section:hover::before {
+            transform: scaleX(1);
+        }
+
+        .policy-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+
+        .policy-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .policy-section h2 i {
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .policy-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .policy-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .policy-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .policy-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .policy-item h3::before {
+            content: '•';
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .policy-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        .contact-item span {
+            font-size: 1rem;
+        }
+
+        .email-link, .address-link {
+            color: #FFD700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover, .address-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .policy-section {
+                padding: 2rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--加载动画-->
+    <div id="loading-box">
+        <div class="loading-left-bg"></div>
+        <div class="loading-right-bg"></div>
+        <div class="spinner-box">
+            <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+            </div>
+            <div class="loading-word">
+                <p class="loading-title" id="loading-title">宣传の部门</p>
+                <span id="loading-text">加载中</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-bullhorn"></i> 宣传外联部</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="submit.html" class="nav-link">投稿区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">新闻区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="photography.html" class="nav-link">摄影展区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">资源服务</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">其他 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="recruitment.html" class="dropdown-link">招新活动</a></li>
+                        <li><a href="members.html" class="dropdown-link">部门人员</a></li>
+                        <li><a href="duty.html" class="dropdown-link">执勤表</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动端磨砂玻璃菜单 -->
+    <div id="mobile-menu" class="mobile-menu">
+        <!-- 背景遮罩 -->
+        <div class="mobile-menu-backdrop"></div>
+        
+        <!-- 菜单内容 -->
+        <div class="mobile-menu-content">
+            <!-- 菜单头部 -->
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>宣传外联部</span>
+                </div>
+                <button id="mobile-menu-close" class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- 菜单导航 -->
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="../index.html" class="mobile-menu-link">首页</a></li>
+                    <li><a href="submit.html" class="mobile-menu-link">投稿区</a></li>
+                    <li><a href="news.html" class="mobile-menu-link">新闻区</a></li>
+                    <li><a href="photography.html" class="mobile-menu-link">摄影展区</a></li>
+                    <li><a href="resources.html" class="mobile-menu-link">资源服务</a></li>
+                    <li><a href="recruitment.html" class="mobile-menu-link">招新活动</a></li>
+                    <li><a href="members.html" class="mobile-menu-link">部门人员</a></li>
+                    <li><a href="duty.html" class="mobile-menu-link">执勤表</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 图标区域 -->
+            <div class="mobile-menu-icons">
+                <div class="icon-row">
+                    <a href="login.html" class="mobile-menu-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="#" class="mobile-menu-icon">
+                        <i class="fas fa-bell"></i>
+                    </a>
+                    <a href="#" class="mobile-menu-icon">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 -->
+            <div class="mobile-menu-search">
+                <div class="mobile-search-container">
+                    <input type="text" placeholder="搜索内容..." class="mobile-search-input">
+                    <button class="mobile-search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 页面标题 -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">隐私政策与使用条款</h1>
+                <p class="page-subtitle">保护您的隐私，规范网站使用</p>
+            </div>
+        </section>
+
+        <!-- 隐私政策 -->
+        <section class="privacy-section">
+            <div class="container">
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h2><i class="fas fa-shield-alt"></i> 隐私政策</h2>
+                        <p class="policy-intro">欢迎访问合肥工业学校建工学部学生会宣传外联部官方网站（以下简称"本网站"）。我们非常重视您的个人信息和隐私保护。请您在使用本网站前，仔细阅读本隐私政策。</p>
+                        
+                        <div class="policy-item">
+                            <h3>信息收集</h3>
+                            <p>本网站仅在您自愿提交的情况下收集您的个人信息（如投稿、报名、留言等）。我们不会未经您的同意收集任何个人敏感信息。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>信息使用</h3>
+                            <p>您提交的信息仅用于网站相关服务（如活动报名、投稿管理、用户反馈等），不会用于其他商业用途。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>信息保护</h3>
+                            <p>我们采取合理的技术措施保护您的个人信息安全，防止信息丢失、泄露、篡改或滥用。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>信息披露</h3>
+                            <p>除法律法规要求或获得您的明确同意外，我们不会向任何第三方披露您的个人信息。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>未成年人保护</h3>
+                            <p>未满18周岁的用户在使用本网站服务时，应在监护人指导下进行。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>政策更新</h3>
+                            <p>本隐私政策如有更新，将在本页面公示。请您定期查阅。</p>
+                        </div>
+                    </div>
+
+                    <!-- 使用条款 -->
+                    <div class="policy-section">
+                        <h2><i class="fas fa-gavel"></i> 使用条款</h2>
+                        
+                        <div class="policy-item">
+                            <h3>网站内容</h3>
+                            <p>本网站所有内容（包括但不限于文字、图片、音视频、资料等）均为学生会宣传外联部或相关权利人所有，未经授权不得转载、复制、传播或用于商业用途。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>用户行为</h3>
+                            <p>用户在本网站的所有行为应遵守国家法律法规及学校相关规定，不得发布违法、违规、侵权、虚假或不良信息。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>投稿与评论</h3>
+                            <p>用户投稿、评论等内容须为原创或已获授权，不得侵犯他人合法权益。因用户行为引发的法律责任由用户本人承担。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>服务变更与中断</h3>
+                            <p>本网站有权根据实际情况随时变更、暂停或终止部分或全部服务，无需事先通知用户。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>免责声明</h3>
+                            <p>本网站力求内容真实、准确，但不对因信息不完整、延误、错误等造成的损失承担责任。因不可抗力或非本网站原因导致的服务中断或数据丢失，本网站不承担责任。</p>
+                        </div>
+                        
+                        <div class="policy-item">
+                            <h3>条款修改</h3>
+                            <p>本使用条款如有变更，将在本页面公示。继续使用本网站即视为同意最新条款。</p>
+                        </div>
+                    </div>
+
+                    <!-- 联系我们 -->
+                    <div class="contact-section">
+                        <h2><i class="fas fa-envelope"></i> 联系我们</h2>
+                        <p>如果您对本隐私政策或使用条款有任何疑问，请通过以下方式联系我们：</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>邮箱：<a href="mailto:jgxcwlb@163.com" class="email-link">jgxcwlb@163.com</a></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>电话：176-8112-5992</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>地址：<a href="https://maps.baidu.com/search/合肥工业学校" target="_blank" class="address-link">合肥工业学校</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer" style="background:#2c3e50;color:#fff;padding:48px 0 0 0;">
+      <div class="container" style="max-width:1200px;margin:auto;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #41506b;padding-bottom:32px;gap:32px;">
+          <!-- 部门介绍及二维码 -->
+          <div style="flex:1 1 220px;min-width:200px;margin-bottom:32px;">
+            <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:16px;">关于我们</h3>
+            <p style="font-size:.98em;line-height:1.7;opacity:.85;">宣传外联部致力于校园文化传播与品牌建设，服务全校师生，促进校企交流与合作。</p>
+            <div style="margin-top:16px;display:flex;align-items:center;gap:12px;">
+              <img src="../img/qb/dq.jpg" alt="微信公众号二维码" style="width:72px;height:72px;border-radius:8px;background:#fff;">
+              <span style="font-size:.9em;color:#f9d36a;">扫码关注公众号</span>
+            </div>
+          </div>
+          <!-- 快速链接 -->
+          <div style="flex:1 1 160px;min-width:160px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">快速链接</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><a href="submit.html" style="color:#fff;text-decoration:none;">投稿区</a></li>
+              <li><a href="news.html" style="color:#fff;text-decoration:none;">新闻区</a></li>
+              <li><a href="photography.html" style="color:#fff;text-decoration:none;">摄影展区</a></li>
+              <li><a href="resources.html" style="color:#fff;text-decoration:none;">资源服务</a></li>
+              <li><a href="members.html" style="color:#fff;text-decoration:none;">部门人员</a></li>
+              <li><a href="duty.html" style="color:#fff;text-decoration:none;">执勤表</a></li>
+            </ul>
+          </div>
+          <!-- 资源推荐/友情链接 -->
+          <div style="flex:1 1 160px;min-width:160px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">资源推荐</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><a href="https://www.hfgyxx.cn/" target="_blank" style="color:#fff;text-decoration:none;">学校官网</a></li>
+              <li><a href="https://www.hfgyxx.cn/info/1030/1102.htm" target="_blank" style="color:#fff;text-decoration:none;">学生会</a></li>
+              <li><a href="resources.html" style="color:#fff;text-decoration:none;">常用下载</a></li>
+              <li><a href="submit.html" style="color:#fff;text-decoration:none;">意见反馈</a></li>
+            </ul>
+          </div>
+          <!-- 联系方式与执勤时间 -->
+          <div style="flex:2 1 320px;min-width:260px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">联系我们 & 执勤时间</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><i class="fas fa-envelope"></i> <a href="mailto:jgxcwlb@163.com" style="color:#fff;text-decoration:none;">jgxcwlb@163.com</a></li>
+              <li><i class="fas fa-phone"></i> 176-8112-5992</li>
+              <li><i class="fas fa-map-marker-alt"></i> <a href="https://ditu.amap.com/search?query=合肥工业学校" target="_blank" style="color:#fff;text-decoration:none;">合肥工业学校</a></li>
+            </ul>
+            <div style="margin-top:14px;">
+              <div style="font-weight:500;">周一至周五 <span style="color:#f9d36a;margin-left:8px;">07:00-20:30</span></div>
+              <div style="font-weight:500;">周六至周日 <span style="color:#f9d36a;margin-left:8px;">00:00-00:00</span></div>
+              <div style="font-weight:500;">节假日 <span style="color:#f9d36a;margin-left:8px;">00:00-00:00</span></div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:16px;">
+              <a href="#" title="微信公众号" style="color:#fff;font-size:1.5em;"><i class="fab fa-weixin"></i></a>
+              <a href="#" title="微博" style="color:#fff;font-size:1.5em;"><i class="fab fa-weibo"></i></a>
+              <a href="#" title="QQ" style="color:#fff;font-size:1.5em;"><i class="fab fa-qq"></i></a>
+              <a href="#" title="抖音" style="color:#fff;font-size:1.5em;"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:24px 0 0 0;gap:16px;">
+          <div style="font-size:1em;opacity:.8;">&copy; 2025 保留所有权利. <span style='margin-left:12px;'>皖ICP备xxxxxxx号</span></div>
+          <div style="display:flex;gap:24px;">
+            <a href="privacy.html" style="color:#f9d36a;text-decoration:none;">隐私政策与使用条款</a>
+            <a href="../Project_structure_description.html" style="color:#f9d36a;text-decoration:none;">网站地图</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html> 

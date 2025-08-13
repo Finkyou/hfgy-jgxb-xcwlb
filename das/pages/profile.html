@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>个人主页</title>
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <h1>个人主页</h1>
+  <div id="user-info"></div>
+  <nav>
+    <button onclick="showTab('my-submissions')">我的投稿</button>
+    <button onclick="showTab('my-resources')">我的资源申请</button>
+    <button onclick="showTab('my-subs')">我的订阅</button>
+    <button onclick="showTab('my-info')">个人信息</button>
+    <button onclick="logout()">退出登录</button>
+  </nav>
+  <section id="my-submissions" class="profile-tab"></section>
+  <section id="my-resources" class="profile-tab" style="display:none"></section>
+  <section id="my-subs" class="profile-tab" style="display:none"></section>
+  <section id="my-info" class="profile-tab" style="display:none"></section>
+  <script src="../js/profile.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html> 

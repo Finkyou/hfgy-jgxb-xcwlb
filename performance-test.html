@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性能测试页面</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .metric-name {
+            font-weight: bold;
+        }
+        .metric-value {
+            color: #007acc;
+        }
+        .good { color: #28a745; }
+        .warning { color: #ffc107; }
+        .poor { color: #dc3545; }
+        button {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #005a9e;
+        }
+        .chart {
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .bar {
+            position: absolute;
+            bottom: 0;
+            background: #007acc;
+            transition: height 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>网页性能测试工具</h1>
+    
+    <div class="test-section">
+        <h2>页面加载性能</h2>
+        <div class="metric">
+            <span class="metric-name">DOM内容加载时间:</span>
+            <span class="metric-value" id="domTime">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">页面完全加载时间:</span>
+            <span class="metric-value" id="loadTime">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">首次内容绘制 (FCP):</span>
+            <span class="metric-value" id="fcp">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">最大内容绘制 (LCP):</span>
+            <span class="metric-value" id="lcp">-</span>
+        </div>
+        <button onclick="runPerformanceTest()">运行性能测试</button>
+        <button onclick="clearResults()">清除结果</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>资源加载性能</h2>
+        <div class="metric">
+            <span class="metric-name">总资源数量:</span>
+            <span class="metric-value" id="resourceCount">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">CSS文件大小:</span>
+            <span class="metric-value" id="cssSize">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">JavaScript文件大小:</span>
+            <span class="metric-value" id="jsSize">-</span>
+        </div>
+        <div class="metric">
+            <span class="metric-name">图片资源大小:</span>
+            <span class="metric-value" id="imageSize">-</span>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>性能评分</h2>
+        <div class="chart" id="performanceChart">
+            <div class="bar" id="domBar" style="left: 10%; width: 15%; height: 0%;"></div>
+            <div class="bar" id="loadBar" style="left: 30%; width: 15%; height: 0%;"></div>
+            <div class="bar" id="fcpBar" style="left: 50%; width: 15%; height: 0%;"></div>
+            <div class="bar" id="lcpBar" style="left: 70%; width: 15%; height: 0%;"></div>
+        </div>
+        <div class="metric">
+            <span class="metric-name">综合性能评分:</span>
+            <span class="metric-value" id="overallScore">-</span>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>优化建议</h2>
+        <div id="recommendations">
+            <p>点击"运行性能测试"按钮开始测试...</p>
+        </div>
+    </div>
+
+    <script>
+        // 性能测试函数
+        function runPerformanceTest() {
+            // 清除之前的结果
+            clearResults();
+            
+            // 等待页面完全加载
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', performTest);
+            } else {
+                performTest();
+            }
+        }
+        
+        function performTest() {
+            // 获取性能数据
+            const perfData = performance.getEntriesByType('navigation')[0];
+            const paintEntries = performance.getEntriesByType('paint');
+            const resourceEntries = performance.getEntriesByType('resource');
+            
+            // 计算关键指标
+            const domTime = perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart;
+            const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+            const fcp = paintEntries.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0;
+            const lcp = performance.getEntriesByName('largest-contentful-paint')[0]?.startTime || 0;
+            
+            // 显示结果
+            displayMetric('domTime', domTime, 'ms', getPerformanceLevel(domTime, 1000, 2000));
+            displayMetric('loadTime', loadTime, 'ms', getPerformanceLevel(loadTime, 2000, 4000));
+            displayMetric('fcp', fcp, 'ms', getPerformanceLevel(fcp, 1000, 2000));
+            displayMetric('lcp', lcp, 'ms', getPerformanceLevel(lcp, 2000, 4000));
+            
+            // 分析资源
+            analyzeResources(resourceEntries);
+            
+            // 计算综合评分
+            calculateOverallScore(domTime, loadTime, fcp, lcp);
+            
+            // 生成优化建议
+            generateRecommendations(domTime, loadTime, fcp, lcp);
+            
+            // 更新图表
+            updateChart(domTime, loadTime, fcp, lcp);
+        }
+        
+        function displayMetric(elementId, value, unit, level) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = value.toFixed(2) + ' ' + unit;
+                element.className = 'metric-value ' + level;
+            }
+        }
+        
+        function getPerformanceLevel(value, good, poor) {
+            if (value <= good) return 'good';
+            if (value <= poor) return 'warning';
+            return 'poor';
+        }
+        
+        function analyzeResources(resourceEntries) {
+            let cssSize = 0;
+            let jsSize = 0;
+            let imageSize = 0;
+            let resourceCount = resourceEntries.length;
+            
+            resourceEntries.forEach(entry => {
+                if (entry.name.includes('.css')) {
+                    cssSize += entry.transferSize || 0;
+                } else if (entry.name.includes('.js')) {
+                    jsSize += entry.transferSize || 0;
+                } else if (entry.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+                    imageSize += entry.transferSize || 0;
+                }
+            });
+            
+            document.getElementById('resourceCount').textContent = resourceCount;
+            document.getElementById('cssSize').textContent = formatBytes(cssSize);
+            document.getElementById('jsSize').textContent = formatBytes(jsSize);
+            document.getElementById('imageSize').textContent = formatBytes(imageSize);
+        }
+        
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function calculateOverallScore(domTime, loadTime, fcp, lcp) {
+            let score = 100;
+            
+            // 根据各项指标扣分
+            if (domTime > 1000) score -= 20;
+            if (domTime > 2000) score -= 20;
+            
+            if (loadTime > 2000) score -= 20;
+            if (loadTime > 4000) score -= 20;
+            
+            if (fcp > 1000) score -= 15;
+            if (fcp > 2000) score -= 15;
+            
+            if (lcp > 2000) score -= 15;
+            if (lcp > 4000) score -= 15;
+            
+            score = Math.max(0, score);
+            
+            const element = document.getElementById('overallScore');
+            if (element) {
+                element.textContent = score + '/100';
+                element.className = 'metric-value ' + getScoreLevel(score);
+            }
+        }
+        
+        function getScoreLevel(score) {
+            if (score >= 80) return 'good';
+            if (score >= 60) return 'warning';
+            return 'poor';
+        }
+        
+        function generateRecommendations(domTime, loadTime, fcp, lcp) {
+            const recommendations = document.getElementById('recommendations');
+            let html = '<h3>优化建议:</h3><ul>';
+            
+            if (domTime > 1000) {
+                html += '<li>DOM内容加载时间过长，建议优化JavaScript执行</li>';
+            }
+            
+            if (loadTime > 2000) {
+                html += '<li>页面加载时间过长，建议优化资源加载</li>';
+            }
+            
+            if (fcp > 1000) {
+                html += '<li>首次内容绘制时间过长，建议优化CSS和关键渲染路径</li>';
+            }
+            
+            if (lcp > 2000) {
+                html += '<li>最大内容绘制时间过长，建议优化图片和字体加载</li>';
+            }
+            
+            if (domTime <= 1000 && loadTime <= 2000 && fcp <= 1000 && lcp <= 2000) {
+                html += '<li>性能表现良好，继续保持！</li>';
+            }
+            
+            html += '</ul>';
+            recommendations.innerHTML = html;
+        }
+        
+        function updateChart(domTime, loadTime, fcp, lcp) {
+            // 计算图表高度（基于性能指标）
+            const maxValue = Math.max(domTime, loadTime, fcp, lcp);
+            const scale = 180 / Math.max(maxValue, 1000); // 180px最大高度
+            
+            document.getElementById('domBar').style.height = (domTime * scale) + 'px';
+            document.getElementById('loadBar').style.height = (loadTime * scale) + 'px';
+            document.getElementById('fcpBar').style.height = (fcp * scale) + 'px';
+            document.getElementById('lcpBar').style.height = (lcp * scale) + 'px';
+        }
+        
+        function clearResults() {
+            const metrics = ['domTime', 'loadTime', 'fcp', 'lcp', 'resourceCount', 'cssSize', 'jsSize', 'imageSize', 'overallScore'];
+            metrics.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = '-';
+                    element.className = 'metric-value';
+                }
+            });
+            
+            // 清除图表
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach(bar => bar.style.height = '0%');
+            
+            document.getElementById('recommendations').innerHTML = '<p>点击"运行性能测试"按钮开始测试...</p>';
+        }
+        
+        // 页面加载完成后自动运行一次测试
+        window.addEventListener('load', () => {
+            setTimeout(runPerformanceTest, 1000);
+        });
+    </script>
+</body>
+</html>

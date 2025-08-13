@@ -1,0 +1,175 @@
+/* 快速动画配置文件 - 提升页面响应速度 */
+
+/* 快速过渡动画 */
+.fast-transition {
+    transition: all 0.15s ease-out !important;
+}
+
+.fast-transform {
+    transition: transform 0.15s ease-out !important;
+}
+
+.fast-opacity {
+    transition: opacity 0.15s ease-out !important;
+}
+
+.fast-color {
+    transition: color 0.15s ease-out !important;
+}
+
+/* 超快速动画 */
+.ultra-fast {
+    transition: all 0.08s ease-out !important;
+}
+
+.ultra-fast-transform {
+    transition: transform 0.08s ease-out !important;
+}
+
+/* 硬件加速优化 */
+.hardware-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+/* 滚动优化 */
+.scroll-optimized {
+    contain: layout style paint;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 触摸优化 */
+.touch-optimized {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* 动画性能优化 */
+.animation-optimized {
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+/* 快速淡入淡出 */
+.fade-in-fast {
+    animation: fadeInFast 0.2s ease-out forwards;
+}
+
+.fade-out-fast {
+    animation: fadeOutFast 0.2s ease-out forwards;
+}
+
+@keyframes fadeInFast {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOutFast {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* 快速滑入滑出 */
+.slide-in-fast {
+    animation: slideInFast 0.2s ease-out forwards;
+}
+
+.slide-out-fast {
+    animation: slideOutFast 0.2s ease-out forwards;
+}
+
+@keyframes slideInFast {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideOutFast {
+    from { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    to { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+}
+
+/* 快速缩放 */
+.scale-in-fast {
+    animation: scaleInFast 0.15s ease-out forwards;
+}
+
+.scale-out-fast {
+    animation: scaleOutFast 0.15s ease-out forwards;
+}
+
+@keyframes scaleInFast {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+@keyframes scaleOutFast {
+    from { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    to { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+}
+
+/* 响应式快速动画 */
+@media (max-width: 768px) {
+    .fast-transition,
+    .fast-transform,
+    .fast-opacity,
+    .fast-color {
+        transition: all 0.1s ease-out !important;
+    }
+    
+    .ultra-fast,
+    .ultra-fast-transform {
+        transition: all 0.05s ease-out !important;
+    }
+}
+
+/* 减少动画的媒体查询 */
+@media (prefers-reduced-motion: reduce) {
+    .fast-transition,
+    .fast-transform,
+    .fast-opacity,
+    .fast-color,
+    .ultra-fast,
+    .ultra-fast-transform {
+        transition: none !important;
+    }
+    
+    .fade-in-fast,
+    .fade-out-fast,
+    .slide-in-fast,
+    .slide-out-fast,
+    .scale-in-fast,
+    .scale-out-fast {
+        animation: none !important;
+    }
+}

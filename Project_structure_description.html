@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>项目结构说明 / Project Structure Description</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #222; padding: 2em; }
+    pre { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 1.5em; font-size: 1.05em; }
+    h1 { color: #2563eb; }
+    ul { margin-top: 1.5em; }
+    li { margin-bottom: 0.5em; }
+    .section-title { color: #1746a2; margin-top: 2em; }
+    .lang-fab {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .lang-fab:hover { background: #1746a2; }
+    .lang-cn, .lang-en { display: none; }
+    .lang-cn.active, .lang-en.active { display: block; }
+    .back-index-btn {
+      position: fixed;
+      right: 32px;
+      top: 32px;
+      background: #fff;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+      border-radius: 24px;
+      padding: 0.5em 1.5em;
+      font-size: 1em;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+      cursor: pointer;
+      z-index: 9999;
+      transition: background 0.2s, color 0.2s;
+    }
+    .back-index-btn:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-index-btn"> 返回首页</a>
+  <button id="lang-fab" class="lang-fab" title="切换语言">EN</button>
+  <div class="lang-cn active">
+    <h1>项目结构说明</h1>
+    <pre>
+das/                        # 网站前端主目录
+├── css/                    # 样式表目录
+│   ├── core.css            # 全站基础样式，含Bootstrap引入，服务所有页面
+│   ├── style.css           # 全站美化与自定义样式，服务所有页面
+│   ├── auth.css            # 登录、注册、找回密码等认证相关页面样式
+│   ├── bootstrap.min.css   # Bootstrap 4/5 样式库（可选）
+│   ├── duty.css            # duty.html 值班表页面样式
+│   ├── loading.css         # loading.html 加载动画页面样式
+│   ├── members.css         # members.html 成员介绍页面样式
+│   ├── news.css            # news.html 新闻页面样式
+│   ├── photography.css     # photography.html 摄影展区页面样式
+│   ├── recruitment.css     # recruitment.html 招新页面样式
+│   ├── resources.css       # resources.html 资源申请页面样式
+│   ├── responsive.css      # 全站响应式适配样式，服务所有页面
+│   ├── style.backup.css    # 样式备份文件
+│   └── submit.css          # submit.html 投稿页面样式
+├── data/                   # 静态内容数据（由Python脚本生成，前端自动读取）
+│   ├── news.json           # 新闻内容数据，供news.html动态渲染
+│   └── gallery.json        # 摄影展区内容数据，供gallery.html动态渲染
+├── img/                    # 图片资源目录
+│   └── gallery/            # 摄影展区图片存放目录，供photography.html/gallery.html使用
+├── js/                     # 前端JS脚本
+│   ├── main.js             # 全站表单校验与交互优化，服务所有页面
+│   ├── admin.js            # admin.html 后台管理页交互逻辑
+│   ├── profile.js          # profile.html 用户个人主页交互逻辑
+│   ├── duty.js             # duty.html 值班表页面交互
+│   ├── loading.js          # loading.html 加载动画页面交互
+│   ├── news.js             # news.html 新闻页面交互
+│   ├── photography.js      # photography.html 摄影展区页面交互
+│   ├── recruitment.js      # recruitment.html 招新页面交互
+│   ├── resources.js        # resources.html 资源申请页面交互
+│   ├── submit.js           # submit.html 投稿页面交互
+├── pages/                  # 主要功能页面
+│   ├── blog.html           # 博客/公告页面
+│   ├── duty.html           # 值班表页面
+│   ├── forgot.html         # 找回密码页
+│   ├── login.html          # 登录页
+│   ├── members.html        # 成员介绍页面
+│   ├── news.html           # 新闻动态页（渲染news.json）
+│   ├── photography.html    # 摄影展区页（渲染gallery.json）
+│   ├── privacy.html        # 隐私政策页面
+│   ├── profile.html        # 用户个人主页
+│   ├── recruitment.html    # 招新报名页面
+│   ├── register.html       # 注册页
+│   ├── resources.html      # 资源申请页面
+│   ├── submit.html         # 投稿区页面
+├── index.html              # 网站首页
+├── generate_news_json.py   # 新闻内容生成脚本（生成data/news.json）
+├── generate_gallery_json.py# 摄影展区内容生成脚本（生成data/gallery.json）
+└── Project_structure_description.html # 本文件，项目结构和说明
+    </pre>
+    <h2 class="section-title">目录/文件说明</h2>
+    <ul>
+      <li><b>css/</b>：全站和各页面样式文件，每个css文件标注其主要服务页面。</li>
+      <li><b>data/</b>：新闻、摄影展区等内容的JSON数据，前端页面自动读取渲染。</li>
+      <li><b>img/gallery/</b>：摄影展区图片，供photography.html和gallery.html使用。</li>
+      <li><b>js/</b>：各页面交互脚本，每个js文件标注其主要服务页面。</li>
+      <li><b>pages/</b>：每个页面单独标注其用途。</li>
+      <li><b>index.html</b>：网站首页。</li>
+      <li><b>generate_news_json.py / generate_gallery_json.py</b>：内容管理脚本，自动生成内容数据文件。</li>
+      <li><b>Project_structure_description.html</b>：本文件，项目结构和说明。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <h1>Project Structure Description</h1>
+    <pre>
+das/                        # Main frontend directory
+├── css/                    # Stylesheets
+│   ├── core.css            # Global base styles, Bootstrap import, for all pages
+│   ├── style.css           # Custom beautification styles, for all pages
+│   ├── auth.css            # Auth pages (login, register, forgot password)
+│   ├── bootstrap.min.css   # Bootstrap 4/5 library (optional)
+│   ├── duty.css            # duty.html (Duty Schedule page)
+│   ├── loading.css         # loading.html (Loading animation page)
+│   ├── members.css         # members.html (Members page)
+│   ├── news.css            # news.html (News page)
+│   ├── photography.css     # photography.html (Photography page)
+│   ├── recruitment.css     # recruitment.html (Recruitment page)
+│   ├── resources.css       # resources.html (Resources page)
+│   ├── responsive.css      # Responsive styles, for all pages
+│   ├── style.backup.css    # Style backup
+│   └── submit.css          # submit.html (Submission page)
+├── data/                   # Static content data (generated by Python scripts, read by frontend)
+│   ├── news.json           # News data, rendered by news.html
+│   └── gallery.json        # Gallery data, rendered by gallery.html
+├── img/                    # Image assets
+│   └── gallery/            # Gallery images, used by photography.html/gallery.html
+├── js/                     # Frontend JS scripts
+│   ├── main.js             # Global form validation and interaction, all pages
+│   ├── admin.js            # admin.html (Admin page)
+│   ├── profile.js          # profile.html (User profile page)
+│   ├── duty.js             # duty.html (Duty Schedule page)
+│   ├── loading.js          # loading.html (Loading animation page)
+│   ├── news.js             # news.html (News page)
+│   ├── photography.js      # photography.html (Photography page)
+│   ├── recruitment.js      # recruitment.html (Recruitment page)
+│   ├── resources.js        # resources.html (Resources page)
+│   ├── submit.js           # submit.html (Submission page)
+├── pages/                  # Main functional pages
+│   ├── blog.html           # Blog/Announcement page
+│   ├── duty.html           # Duty Schedule page
+│   ├── forgot.html         # Forgot password page
+│   ├── login.html          # Login page
+│   ├── members.html        # Members page
+│   ├── news.html           # News page (renders news.json)
+│   ├── photography.html    # Photography page (renders gallery.json)
+│   ├── privacy.html        # Privacy policy page
+│   ├── profile.html        # User profile page
+│   ├── recruitment.html    # Recruitment page
+│   ├── register.html       # Register page
+│   ├── resources.html      # Resources page
+│   ├── submit.html         # Submission page
+├── index.html              # Website homepage
+├── generate_news_json.py   # News content generator script (outputs data/news.json)
+├── generate_gallery_json.py# Gallery content generator script (outputs data/gallery.json)
+└── Project_structure_description.html # This file, project structure and description
+    </pre>
+    <h2 class="section-title">Directory/Files Explanation</h2>
+    <ul>
+      <li><b>css/</b>: All site and page-specific stylesheets, each file notes its main target page.</li>
+      <li><b>data/</b>: JSON data for news, gallery, etc., auto-read by frontend pages.</li>
+      <li><b>img/gallery/</b>: Gallery images, used by photography.html and gallery.html.</li>
+      <li><b>js/</b>: All page interaction scripts, each file notes its main target page.</li>
+      <li><b>pages/</b>: Each page is individually annotated for its purpose.</li>
+      <li><b>index.html</b>: Website homepage.</li>
+      <li><b>generate_news_json.py / generate_gallery_json.py</b>: Content management scripts, auto-generate data files.</li>
+      <li><b>Project_structure_description.html</b>: This file, project structure and description.</li>
+    </ul>
+  </div>
+  <script>
+    const langFab = document.getElementById('lang-fab');
+    const cn = document.querySelector('.lang-cn');
+    const en = document.querySelector('.lang-en');
+    let isCn = true;
+    langFab.onclick = function() {
+      isCn = !isCn;
+      if(isCn) {
+        cn.classList.add('active');
+        en.classList.remove('active');
+        langFab.textContent = 'EN';
+      } else {
+        en.classList.add('active');
+        cn.classList.remove('active');
+        langFab.textContent = '中';
+      }
+    };
+  </script>
+</body>
+</html> 

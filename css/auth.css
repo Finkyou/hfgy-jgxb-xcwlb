@@ -1,0 +1,446 @@
+/* 用户认证页面样式 */
+
+/* 黑色磨砂背景 */
+.auth-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(20,20,20,0.98) 0%, rgba(40,40,40,0.98) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 20px 20px; /* 增加顶部内边距，避免与导航栏重叠 */
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: '';
+    position: fixed; /* 改为fixed定位，确保背景固定 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/slider/1.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.08;
+    z-index: 0;
+    filter: blur(6px) grayscale(0.3);
+}
+
+.auth-card {
+    background: rgba(30, 30, 30, 0.72);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    animation: slideInUp 0.6s ease-out;
+    margin: 20px; /* 添加外边距 */
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 认证头部 */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff, #b3b3b3 60%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.auth-header p {
+    color: #bbb;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 表单样式 */
+.auth-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-icon i:first-child {
+    position: absolute;
+    left: 15px;
+    color: #667eea;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #232323;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(40,40,40,0.92);
+    color: #fff;
+    height: 50px; /* 统一输入框高度 */
+}
+
+.input-icon input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.08);
+    transform: translateY(-1px);
+}
+
+.input-icon input::placeholder {
+    color: #888;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+}
+
+/* 表单选项 */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 优化复选框样式 */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin: 15px 0;
+    color: #888888; /* 修改文字颜色为 #888888 */
+}
+
+.checkbox-label span {
+    color: #888888; /* 确保文字部分也是 #888888 */
+}
+
+/* 链接保持原有的悬停效果 */
+.checkbox-label a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.checkbox-label a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.forgot-link {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 认证按钮 */
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2 80%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    letter-spacing: 0.5px;
+}
+
+.auth-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.auth-btn:hover::before {
+    left: 100%;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.25);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+/* 分割线 */
+.auth-divider {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+}
+
+.auth-divider span {
+    background: rgba(30,30,30,0.95);
+    padding: 0 20px;
+    color: #bbb;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 社交登录 */
+.social-login {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: 2px solid #232323;
+    border-radius: 10px;
+    background: rgba(40,40,40,0.92);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    background: #232323;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn.google:hover {
+    border-color: #db4437;
+    color: #db4437;
+}
+
+.social-btn.facebook:hover {
+    border-color: #4267B2;
+    color: #4267B2;
+}
+
+.social-btn.twitter:hover {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+}
+
+.social-btn i {
+    font-size: 1.1rem;
+}
+
+/* 认证底部 */
+.auth-footer {
+    text-align: center;
+}
+
+.auth-footer p {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.auth-footer a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 100px 10px 10px 10px; /* 移动端减小内边距 */
+    }
+    
+    .auth-card {
+        padding: 30px 20px;
+        margin: 10px; /* 移动端减小外边距 */
+    }
+    
+    .auth-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 导航栏登录图标样式 */
+.nav-item .nav-link i.fa-user-circle {
+    font-size: 1.2rem;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.nav-item .nav-link:hover i.fa-user-circle {
+    color: #764ba2;
+    transform: scale(1.1);
+}
+
+/* 加载动画 */
+.auth-card {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 输入框聚焦效果增强 */
+.input-icon:focus-within {
+    transform: translateY(-1px);
+}
+
+.input-icon:focus-within i:first-child {
+    color: #764ba2;
+}
+
+/* 按钮加载状态 */
+.auth-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.auth-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

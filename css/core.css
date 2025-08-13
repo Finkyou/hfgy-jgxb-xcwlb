@@ -1,0 +1,198 @@
+/*------------------------------------------------------------------------------
+
+Template:  Theme Name
+Author: 
+Version: 1
+Design and Developed by: 
+
+Note: This core style file includes all external plugins css file.
+
+-------------------------------------------------------------------------------*/
+
+@import url("font-awesome.min.css");
+@import url("icofont.css");
+@import url("plugins/animate.css");
+@import url("plugins/chosen.min.css");
+@import url("plugins/slick.css");
+@import url("plugins/meanmenu.min.css");
+@import url("plugins/chosen.min.css");
+@import url("plugins/jquery-ui.min.css");
+@import url("shortcode/default.css");
+
+body {
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125vw;
+  height: 125vh;
+  overflow-x: auto;
+}
+
+.navbar {
+  transform: scale(0.9);
+  transform-origin: top left;
+  height: 90%;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.glass-dark {
+  background: rgba(20, 20, 20, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  color: #f3f3f3;
+}
+
+/* 工具箱页面统一深色主题样式 */
+.toolbox-header {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.toolbox-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.toolbox-search {
+  flex: 1;
+  margin: 0 32px;
+}
+.toolbox-search input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #232323;
+  color: #e6e8ef;
+  font-size: 1.1em;
+  transition: background 0.2s, color 0.2s;
+}
+.toolbox-search input:focus {
+  background: #222;
+  outline: 2px solid #6366f1;
+}
+.toolbox-categories {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 0 12px;
+}
+.toolbox-category {
+  background: #232323;
+  color: #a3a7b7;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  border: none;
+}
+.toolbox-category.active, .toolbox-category:hover {
+  background: #6366f1;
+  color: #fff;
+}
+.toolbox-container {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 32px 12px;
+  background: #1A1A1A;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+}
+.toolbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.toolbox-item {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 28px 24px;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow .2s, background .2s, border .2s;
+  cursor: pointer;
+  border: 1px solid #232323;
+}
+.toolbox-item:hover {
+  box-shadow: 0 8px 32px rgba(99,102,241,0.15);
+  background: #282828;
+  border: 1px solid #6366f1;
+}
+.toolbox-icon {
+  font-size: 2.2em;
+  margin-bottom: 12px;
+  color: #6366f1;
+}
+.toolbox-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.toolbox-meta {
+  color: #a3a7b7;
+  font-size: .98em;
+  margin-bottom: 8px;
+}
+.toolbox-desc2 {
+  color: #bfc2d4;
+  font-size: .98em;
+}
+.toolbox-back {
+  background: #232323;
+  color: #f9d36a;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.toolbox-back:hover {
+  background: #6366f1;
+  color: #fff;
+}
+.toolbox-tags {
+  margin-bottom: 8px;
+}
+.toolbox-tag {
+  display: inline-block;
+  background: #6366f1;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: .92em;
+  margin-right: 6px;
+  margin-bottom: 2px;
+}
+@media (max-width: 700px) {
+  .toolbox-header, .toolbox-categories, .toolbox-container {
+    padding: 12px;
+  }
+  .toolbox-grid {
+    gap: 16px;
+  }
+  .toolbox-title {
+    font-size: 1.3rem;
+  }
+}
+body.toolbox-dark {
+  background: #1A1A1A !important;
+  color: #e6e8ef;
+}

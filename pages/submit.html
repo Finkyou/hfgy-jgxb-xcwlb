@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>投稿区 - 合肥工业学校建工部宣传外联部网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/submit.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/loading.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script>
+        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) {
+            window.location.href = "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
+        }
+    </script>
+</head>
+<body>
+    <!--加载动画-->
+    <div id="loading-box">
+        <div class="loading-left-bg"></div>
+        <div class="loading-right-bg"></div>
+        <div class="spinner-box">
+            <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+            </div>
+            <div class="loading-word">
+                <p class="loading-title" id="loading-title">宣传の部门</p>
+                <span id="loading-text">加载中</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-bullhorn"></i> 宣传外联部</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="submit.html" class="nav-link">投稿区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">新闻区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="photography.html" class="nav-link">摄影展区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">资源服务</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">其他 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="recruitment.html" class="dropdown-link">招新活动</a></li>
+                        <li><a href="members.html" class="dropdown-link">部门人员</a></li>
+                        <li><a href="duty.html" class="dropdown-link">执勤表</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://user.qzone.qq.com/3806700911" class="nav-link" target="_blank" title="QQ空间">
+                        <i class="fab fa-qq"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link" id="wechat-btn" title="关注微信公众号">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动端磨砂玻璃菜单 -->
+    <div id="mobile-menu" class="mobile-menu">
+        <!-- 背景遮罩 -->
+        <div class="mobile-menu-backdrop"></div>
+        
+        <!-- 菜单内容 -->
+        <div class="mobile-menu-content">
+            <!-- 菜单头部 -->
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>宣传外联部</span>
+                </div>
+                <button id="mobile-menu-close" class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- 菜单导航 -->
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="../index.html" class="mobile-menu-link">首页</a></li>
+                    <li><a href="submit.html" class="mobile-menu-link active">投稿区</a></li>
+                    <li><a href="news.html" class="mobile-menu-link">新闻区</a></li>
+                    <li><a href="photography.html" class="mobile-menu-link">摄影展区</a></li>
+                    <li><a href="resources.html" class="mobile-menu-link">资源服务</a></li>
+                    <li><a href="recruitment.html" class="mobile-menu-link">招新活动</a></li>
+                    <li><a href="members.html" class="mobile-menu-link">部门人员</a></li>
+                    <li><a href="duty.html" class="mobile-menu-link">执勤表</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 图标区域 -->
+            <div class="mobile-menu-icons">
+                <div class="icon-row">
+                    <a href="login.html" class="mobile-menu-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="#" class="mobile-menu-icon">
+                        <i class="fas fa-bell"></i>
+                    </a>
+                    <a href="#" class="mobile-menu-icon">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 -->
+            <div class="mobile-menu-search">
+                <div class="mobile-search-container">
+                    <input type="text" placeholder="搜索内容..." class="mobile-search-input">
+                    <button class="mobile-search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 微信公众号二维码弹窗 -->
+    <div id="wechat-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999;">
+      <div style="background:#fff; border-radius:8px; max-width:320px; margin:10vh auto; padding:2em; text-align:center; position:relative;">
+        <span id="wechat-close" style="position:absolute; right:1em; top:1em; cursor:pointer; font-size:1.5em;">&times;</span>
+        <h5>关注微信公众号</h5>
+        <img src="../img/qb/dq.jpg" alt="微信公众号二维码" style="width:200px; height:200px; margin:1em 0;">
+        <div style="color:#888;">微信扫一扫，获取最新资讯</div>
+      </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 页面标题 -->
+        <section class="page-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">投稿区</h1>
+                    <p class="page-subtitle">分享你的创意，展示你的才华</p>
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-upload"></i>
+                            <span>累计投稿</span>
+                            <strong>1,234</strong>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>投稿作者</span>
+                            <strong>567</strong>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <span>精选作品</span>
+                            <strong>89</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 投稿指南 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">投稿指南</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <h3>文字投稿</h3>
+                        <div class="guide-details">
+                            <div class="detail-item">
+                                <i class="fas fa-file-text"></i>
+                                <span>文章字数：500-2000字</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-file-word"></i>
+                                <span>格式：Word文档或纯文本</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>内容：校园生活、学习心得、活动报道</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>要求：原创内容，语言流畅</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>摄影投稿</h3>
+                        <div class="guide-details">
+                            <div class="detail-item">
+                                <i class="fas fa-image"></i>
+                                <span>格式：JPG、PNG，分辨率不低于1920x1080</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-eye"></i>
+                                <span>内容：校园风光、活动瞬间、人物特写</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-palette"></i>
+                                <span>要求：构图精美，主题明确</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-images"></i>
+                                <span>数量：单次投稿不超过10张</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>视频投稿</h3>
+                        <div class="guide-details">
+                            <div class="detail-item">
+                                <i class="fas fa-film"></i>
+                                <span>格式：MP4、AVI，时长3-10分钟</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tv"></i>
+                                <span>分辨率：不低于720P</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>内容：活动记录、创意短片、教学视频</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-volume-up"></i>
+                                <span>要求：画面清晰，音质良好</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>设计投稿</h3>
+                        <div class="guide-details">
+                            <div class="detail-item">
+                                <i class="fas fa-file-image"></i>
+                                <span>格式：PSD、AI、PNG、JPG</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>内容：海报设计、LOGO设计、插画作品</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-magic"></i>
+                                <span>要求：创意独特，视觉效果好</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>尺寸：根据具体需求确定</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 投稿入口 -->
+        <section class="submit-section">
+            <div class="container">
+                <h2 class="section-title">在线投稿</h2>
+                <div class="submit-container">
+                    <div class="submit-options">
+                        <div class="submit-card">
+                            <div class="submit-icon">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <h3>腾讯文档投稿</h3>
+                            <p>点击下方按钮跳转到腾讯文档投稿收集表，填写相关信息并上传作品文件。</p>
+                            <a href="https://docs.qq.com/form/page/DWFprU0ZBYmJMZW5y" target="_blank" class="btn btn-secondary btn-large">
+                                <i class="fas fa-edit"></i>
+                                开始投稿
+                            </a>
+                        </div>
+                        
+                        <div class="submit-card">
+                            <div class="submit-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <h3>扫码投稿</h3>
+                            <p>使用手机扫描二维码，在移动端填写投稿信息，更加便捷。</p>
+                            <button class="btn btn-secondary btn-large" id="qrCodeBtn">
+                                <i class="fas fa-mobile-alt"></i>
+                                显示二维码
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 投稿说明 -->
+                    <div class="submit-info">
+                        <h4><i class="fas fa-info-circle"></i> 投稿说明</h4>
+                        <ul>
+                            <li>请确保填写真实有效的联系方式，方便我们与您联系</li>
+                            <li>上传文件大小不超过50MB，支持常见图片、文档、视频格式</li>
+                            <li>投稿后我们会在3-5个工作日内进行审核并回复</li>
+                            <li>如有疑问，请联系我们：jgxcwlb@163.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 二维码弹窗 -->
+        <div id="qrModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>扫码投稿</h3>
+                    <button class="modal-close" id="qrModalClose">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="qr-container">
+                        <img src="../img/qb/tctgtag.png" alt="腾讯文档投稿二维码" class="qr-image">
+                        <p>使用微信或QQ扫描二维码，在移动端填写投稿信息</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投稿历史 -->
+        <section class="history-section">
+            <div class="container">
+                <h2 class="section-title">投稿历史</h2>
+                <div class="history-container">
+                    <div class="history-filters">
+                        <button class="filter-btn active" data-filter="all">全部</button>
+                        <button class="filter-btn" data-filter="pending">待审核</button>
+                        <button class="filter-btn" data-filter="approved">已通过</button>
+                        <button class="filter-btn" data-filter="rejected">已拒绝</button>
+                    </div>
+                    
+                    <div class="history-list" id="historyList">
+                        <!-- 示例投稿记录 -->
+                        <div class="history-item approved">
+                            <div class="history-header">
+                                <h3 class="history-title">校园春色摄影作品</h3>
+                                <span class="history-status approved">已通过</span>
+                            </div>
+                            <div class="history-meta">
+                                <span><i class="fas fa-calendar"></i> 2025-01-15</span>
+                                <span><i class="fas fa-tag"></i> 摄影投稿</span>
+                                <span><i class="fas fa-clock"></i> 审核用时：2天</span>
+                            </div>
+                            <p class="history-description">拍摄了校园樱花盛开的美景，展现了春天的生机与活力。作品构图精美，色彩丰富，获得了广泛好评。</p>
+                            <div class="history-actions">
+                                <button class="btn-view">查看详情</button>
+                                <button class="btn-edit">重新投稿</button>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item pending">
+                            <div class="history-header">
+                                <h3 class="history-title">学生会活动报道</h3>
+                                <span class="history-status pending">待审核</span>
+                            </div>
+                            <div class="history-meta">
+                                <span><i class="fas fa-calendar"></i> 2025-01-20</span>
+                                <span><i class="fas fa-tag"></i> 文字投稿</span>
+                                <span><i class="fas fa-clock"></i> 提交时间：1天前</span>
+                            </div>
+                            <p class="history-description">详细报道了学生会举办的文艺汇演活动，包括活动背景、精彩瞬间和参与感受。</p>
+                            <div class="history-actions">
+                                <button class="btn-view">查看详情</button>
+                                <button class="btn-edit">编辑修改</button>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item rejected">
+                            <div class="history-header">
+                                <h3 class="history-title">创意海报设计</h3>
+                                <span class="history-status rejected">已拒绝</span>
+                            </div>
+                            <div class="history-meta">
+                                <span><i class="fas fa-calendar"></i> 2025-01-10</span>
+                                <span><i class="fas fa-tag"></i> 设计投稿</span>
+                                <span><i class="fas fa-clock"></i> 审核用时：3天</span>
+                            </div>
+                            <p class="history-description">为校园文化节设计的宣传海报，因设计风格与学校形象不符被拒绝。已收到详细反馈意见。</p>
+                            <div class="history-actions">
+                                <button class="btn-view">查看详情</button>
+                                <button class="btn-edit">重新设计</button>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item approved">
+                            <div class="history-header">
+                                <h3 class="history-title">学习心得分享</h3>
+                                <span class="history-status approved">已通过</span>
+                            </div>
+                            <div class="history-meta">
+                                <span><i class="fas fa-calendar"></i> 2025-01-08</span>
+                                <span><i class="fas fa-tag"></i> 文字投稿</span>
+                                <span><i class="fas fa-clock"></i> 审核用时：1天</span>
+                            </div>
+                            <p class="history-description">分享了在专业课程学习中的心得体会，内容充实，语言流畅，对同学们很有启发意义。</p>
+                            <div class="history-actions">
+                                <button class="btn-view">查看详情</button>
+                                <button class="btn-edit">重新投稿</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section">
+          <h2 class="faq-title">常见问题</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                <i class="fas fa-question-circle"></i>
+                投稿后多久能收到回复？
+                <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                我们会在收到投稿后的3-5个工作日内进行审核并回复。如有特殊情况，我们会及时通知您。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                <i class="fas fa-question-circle"></i>
+                投稿被拒绝的原因有哪些？
+                <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                常见原因包括：内容不符合要求、格式不正确、文件损坏、抄袭他人作品等。我们会详细说明拒绝原因。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                <i class="fas fa-question-circle"></i>
+                投稿作品会被如何使用？
+                <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                通过审核的作品将用于校园宣传、网站展示、社交媒体发布等。我们会注明作者信息并保护您的版权。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                <i class="fas fa-question-circle"></i>
+                可以同时投稿多个作品吗？
+                <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                可以，建议每次投稿不超过3个作品，以确保审核质量。不同类别的作品可以分别提交。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer" style="background:#2c3e50;color:#fff;padding:48px 0 0 0;">
+      <div class="container" style="max-width:1200px;margin:auto;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #41506b;padding-bottom:32px;gap:32px;">
+          <!-- 部门介绍及二维码 -->
+          <div style="flex:1 1 220px;min-width:200px;margin-bottom:32px;">
+            <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:16px;">关于我们</h3>
+            <p style="font-size:.98em;line-height:1.7;opacity:.85;">宣传外联部致力于校园文化传播与品牌建设，服务全校师生，促进校企交流与合作。</p>
+            <div style="margin-top:16px;display:flex;align-items:center;gap:12px;">
+              <img src="../img/qb/dq.jpg" alt="微信公众号二维码" style="width:72px;height:72px;border-radius:8px;background:#fff;">
+              <span style="font-size:.9em;color:#f9d36a;">扫码关注公众号</span>
+            </div>
+          </div>
+          <!-- 快速链接 -->
+          <div style="flex:1 1 160px;min-width:160px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">快速链接</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><a href="submit.html" style="color:#fff;text-decoration:none;">投稿区</a></li>
+              <li><a href="news.html" style="color:#fff;text-decoration:none;">新闻区</a></li>
+              <li><a href="photography.html" style="color:#fff;text-decoration:none;">摄影展区</a></li>
+              <li><a href="resources.html" style="color:#fff;text-decoration:none;">资源服务</a></li>
+              <li><a href="members.html" style="color:#fff;text-decoration:none;">部门人员</a></li>
+              <li><a href="duty.html" style="color:#fff;text-decoration:none;">执勤表</a></li>
+            </ul>
+          </div>
+          <!-- 资源推荐/友情链接 -->
+          <div style="flex:1 1 160px;min-width:160px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">资源推荐</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><a href="https://www.hfgyxx.cn/" target="_blank" style="color:#fff;text-decoration:none;">学校官网</a></li>
+              <li><a href="https://www.hfgyxx.cn/info/1030/1102.htm" target="_blank" style="color:#fff;text-decoration:none;">学生会</a></li>
+              <li><a href="resources.html" style="color:#fff;text-decoration:none;">常用下载</a></li>
+              <li><a href="submit.html" style="color:#fff;text-decoration:none;">意见反馈</a></li>
+            </ul>
+          </div>
+          <!-- 联系方式与执勤时间 -->
+          <div style="flex:2 1 320px;min-width:260px;margin-bottom:32px;">
+            <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:16px;">联系我们 & 执勤时间</h3>
+            <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+              <li><i class="fas fa-envelope"></i> <a href="mailto:jgxcwlb@163.com" style="color:#fff;text-decoration:none;">jgxcwlb@163.com</a></li>
+              <li><i class="fas fa-phone"></i> 176-8112-5992</li>
+              <li><i class="fas fa-map-marker-alt"></i> <a href="https://ditu.amap.com/search?query=合肥工业学校" target="_blank" style="color:#fff;text-decoration:none;">合肥工业学校</a></li>
+            </ul>
+            <div style="margin-top:14px;">
+              <div style="font-weight:500;">周一至周五 <span style="color:#f9d36a;margin-left:8px;">07:00-20:30</span></div>
+              <div style="font-weight:500;">周六至周日 <span style="color:#f9d36a;margin-left:8px;">00:00-00:00</span></div>
+              <div style="font-weight:500;">节假日 <span style="color:#f9d36a;margin-left:8px;">00:00-00:00</span></div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:16px;">
+              <a href="#" title="微信公众号" style="color:#fff;font-size:1.5em;"><i class="fab fa-weixin"></i></a>
+              <a href="#" title="微博" style="color:#fff;font-size:1.5em;"><i class="fab fa-weibo"></i></a>
+              <a href="#" title="QQ" style="color:#fff;font-size:1.5em;"><i class="fab fa-qq"></i></a>
+              <a href="#" title="抖音" style="color:#fff;font-size:1.5em;"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:24px 0 0 0;gap:16px;">
+          <div style="font-size:1em;opacity:.8;">&copy; 2025 保留所有权利. <span style='margin-left:12px;'>皖ICP备xxxxxxx号</span></div>
+          <div style="display:flex;gap:24px;">
+            <a href="privacy.html" style="color:#f9d36a;text-decoration:none;">隐私政策与使用条款</a>
+            <a href="../Project_structure_description.html" style="color:#f9d36a;text-decoration:none;">网站地图</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/submit.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // FAQ 展开/收起功能
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', function() {
+      this.classList.toggle('open');
+      // 只展开一个
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== this) other.classList.remove('open');
+      });
+    });
+  });
+  
+  // 微信公众号二维码弹窗
+  var btn = document.getElementById('wechat-btn');
+  var modal = document.getElementById('wechat-modal');
+  var close = document.getElementById('wechat-close');
+  if(btn && modal && close) {
+    btn.onclick = function() { modal.style.display = 'block'; };
+    close.onclick = function() { modal.style.display = 'none'; };
+    modal.onclick = function(e) {
+      if(e.target === modal) modal.style.display = 'none';
+    };
+  }
+  
+  // 投稿二维码弹窗
+  var qrBtn = document.getElementById('qrCodeBtn');
+  var qrModal = document.getElementById('qrModal');
+  var qrModalClose = document.getElementById('qrModalClose');
+  
+  if(qrBtn && qrModal && qrModalClose) {
+    qrBtn.onclick = function() { 
+      qrModal.style.display = 'flex'; 
+    };
+    qrModalClose.onclick = function() { 
+      qrModal.style.display = 'none'; 
+    };
+    qrModal.onclick = function(e) {
+      if(e.target === qrModal) qrModal.style.display = 'none';
+    };
+  }
+  
+  // 投稿历史筛选功能
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var historyItems = document.querySelectorAll('.history-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // 移除所有按钮的active类
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // 添加当前按钮的active类
+      this.classList.add('active');
+      
+      var filter = this.getAttribute('data-filter');
+      
+      historyItems.forEach(item => {
+        if (filter === 'all') {
+          item.style.display = 'block';
+        } else {
+          if (item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
+</body>
+</html> 

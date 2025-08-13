@@ -1,0 +1,228 @@
+/* 超快速动画配置文件 - 确保所有动画在1.5秒内完成 */
+
+/* 超快速过渡动画 */
+.ultra-fast-transition {
+    transition: all 0.15s ease-out !important;
+}
+
+.ultra-fast-transform {
+    transition: transform 0.15s ease-out !important;
+}
+
+.ultra-fast-opacity {
+    transition: opacity 0.15s ease-out !important;
+}
+
+.ultra-fast-color {
+    transition: color 0.15s ease-out !important;
+}
+
+/* 极速动画 */
+.extreme-fast {
+    transition: all 0.08s ease-out !important;
+}
+
+.extreme-fast-transform {
+    transition: transform 0.08s ease-out !important;
+}
+
+/* 硬件加速优化 */
+.hardware-accelerated-ultra {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+/* 滚动优化 */
+.scroll-optimized-ultra {
+    contain: layout style paint;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 触摸优化 */
+.touch-optimized-ultra {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* 动画性能优化 */
+.animation-optimized-ultra {
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+/* 超快速淡入淡出 */
+.fade-in-ultra-fast {
+    animation: fadeInUltraFast 0.15s ease-out forwards;
+}
+
+.fade-out-ultra-fast {
+    animation: fadeOutUltraFast 0.15s ease-out forwards;
+}
+
+@keyframes fadeInUltraFast {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOutUltraFast {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* 超快速滑入滑出 */
+.slide-in-ultra-fast {
+    animation: slideInUltraFast 0.15s ease-out forwards;
+}
+
+.slide-out-ultra-fast {
+    animation: slideOutUltraFast 0.15s ease-out forwards;
+}
+
+@keyframes slideInUltraFast {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideOutUltraFast {
+    from { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    to { 
+        opacity: 0; 
+        transform: translateY(-15px); 
+    }
+}
+
+/* 超快速缩放 */
+.scale-in-ultra-fast {
+    animation: scaleInUltraFast 0.12s ease-out forwards;
+}
+
+.scale-out-ultra-fast {
+    animation: scaleOutUltraFast 0.12s ease-out forwards;
+}
+
+@keyframes scaleInUltraFast {
+    from { 
+        opacity: 0; 
+        transform: scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+@keyframes scaleOutUltraFast {
+    from { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    to { 
+        opacity: 0; 
+        transform: scale(0.95); 
+    }
+}
+
+/* 超快速旋转 */
+.rotate-in-ultra-fast {
+    animation: rotateInUltraFast 0.2s ease-out forwards;
+}
+
+@keyframes rotateInUltraFast {
+    from { 
+        opacity: 0; 
+        transform: rotate(-10deg) scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: rotate(0deg) scale(1); 
+    }
+}
+
+/* 响应式超快速动画 */
+@media (max-width: 768px) {
+    .ultra-fast-transition,
+    .ultra-fast-transform,
+    .ultra-fast-opacity,
+    .ultra-fast-color {
+        transition: all 0.1s ease-out !important;
+    }
+    
+    .extreme-fast,
+    .extreme-fast-transform {
+        transition: all 0.05s ease-out !important;
+    }
+    
+    .fade-in-ultra-fast,
+    .fade-out-ultra-fast,
+    .slide-in-ultra-fast,
+    .slide-out-ultra-fast {
+        animation-duration: 0.1s !important;
+    }
+    
+    .scale-in-ultra-fast,
+    .scale-out-ultra-fast {
+        animation-duration: 0.08s !important;
+    }
+}
+
+/* 减少动画的媒体查询 */
+@media (prefers-reduced-motion: reduce) {
+    .ultra-fast-transition,
+    .ultra-fast-transform,
+    .ultra-fast-opacity,
+    .ultra-fast-color,
+    .extreme-fast,
+    .extreme-fast-transform {
+        transition: none !important;
+    }
+    
+    .fade-in-ultra-fast,
+    .fade-out-ultra-fast,
+    .slide-in-ultra-fast,
+    .slide-out-ultra-fast,
+    .scale-in-ultra-fast,
+    .scale-out-ultra-fast,
+    .rotate-in-ultra-fast {
+        animation: none !important;
+    }
+}
+
+/* 性能监控类 */
+.performance-monitor {
+    contain: layout style paint;
+    will-change: auto;
+}
+
+/* 关键渲染路径优化 */
+.critical-render-path {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+/* 动画队列优化 */
+.animation-queue-optimized {
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
+}
+
+/* 批量动画优化 */
+.batch-animation {
+    animation-duration: 0.15s !important;
+    animation-delay: calc(var(--animation-index, 0) * 0.05s) !important;
+}

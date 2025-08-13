@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>资源下载工具箱</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/resources.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="toolbox-dark">
+    <div class="toolbox-header">
+        <button class="toolbox-back" onclick="window.location.href='../resources.html'"><i class="fas fa-arrow-left"></i> 返回资源服务</button>
+        <div class="toolbox-title">资源下载工具箱</div>
+        <div class="toolbox-search"><input id="searchInput" type="text" placeholder="搜索资源..." oninput="filterItems()"></div>
+    </div>
+    <div class="toolbox-categories">
+        <button class="toolbox-category active" onclick="filterCategory('全部')">全部</button>
+        <button class="toolbox-category" onclick="filterCategory('模板')">模板</button>
+        <button class="toolbox-category" onclick="filterCategory('素材')">素材</button>
+        <button class="toolbox-category" onclick="filterCategory('工具包')">工具包</button>
+    </div>
+    <div class="toolbox-container glass-dark">
+        <div class="toolbox-grid" id="toolboxGrid">
+            <div class="toolbox-item" data-category="模板" data-name="活动策划模板" onclick="window.open('../../downloads/sample.docx')">
+                <div class="toolbox-icon"><i class="fas fa-file-word"></i></div>
+                <div class="toolbox-name">活动策划模板</div>
+                <div class="toolbox-meta">Word文档 · 1.2MB</div>
+                <div class="toolbox-tags"><span class="toolbox-tag">模板</span></div>
+                <div class="toolbox-desc2">包含活动策划书、预算表、时间安排等模板</div>
+            </div>
+            <div class="toolbox-item" data-category="素材" data-name="海报设计素材" onclick="window.open('../../downloads/poster.zip')">
+                <div class="toolbox-icon"><i class="fas fa-image"></i></div>
+                <div class="toolbox-name">海报设计素材</div>
+                <div class="toolbox-meta">图片包 · 5.8MB</div>
+                <div class="toolbox-tags"><span class="toolbox-tag">素材</span></div>
+                <div class="toolbox-desc2">高质量的海报设计素材和背景图片</div>
+            </div>
+            <!-- 更多资源项可在此添加，需带data-category和data-name属性 -->
+        </div>
+    </div>
+    <script>
+    function filterItems() {
+        var input = document.getElementById('searchInput').value.toLowerCase();
+        var items = document.querySelectorAll('.toolbox-item');
+        items.forEach(function(item) {
+            var name = item.getAttribute('data-name').toLowerCase();
+            item.style.display = name.includes(input) ? '' : 'none';
+        });
+    }
+    function filterCategory(cat) {
+        document.querySelectorAll('.toolbox-category').forEach(btn=>btn.classList.remove('active'));
+        Array.from(document.querySelectorAll('.toolbox-category')).find(btn=>btn.textContent===cat).classList.add('active');
+        var items = document.querySelectorAll('.toolbox-item');
+        items.forEach(function(item) {
+            if(cat==='全部'||item.getAttribute('data-category')===cat) item.style.display='';
+            else item.style.display='none';
+        });
+        filterItems();
+    }
+    </script>
+</body>
+</html> 

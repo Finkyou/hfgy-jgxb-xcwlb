@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招新活动 - 合肥工业学校建工部宣传外联部网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recruitment.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/mobile-glass.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script>
+        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) {
+            window.location.href = "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A6BFF',
+                        secondary: '#FFD700',
+                        accent: '#FF9800',
+                        dark: '#2C2C2C',
+                        light: '#f0f8ff',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 1s ease-out forwards',
+                        'slide-in-right': 'slideInRight 1s ease-out forwards',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'pop-in': 'popIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        popIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '80%': { opacity: '1', transform: 'scale(1.05)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    }
+                },
+            }
+        }
+    </script>
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!--加载动画-->
+    <div id="loading-box">
+        <div class="loading-left-bg"></div>
+        <div class="loading-right-bg"></div>
+        <div class="spinner-box">
+            <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+            </div>
+            <div class="loading-word">
+                <p class="loading-title" id="loading-title">宣传の部门</p>
+                <span id="loading-text">加载中</span>
+            </div>
+        </div>
+    </div>
+    <!-- ================== 导航栏 ================== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">
+                <span class="text-secondary">宣传外联</span>部
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#slide1" class="text-white hover:text-secondary transition-colors duration-300">首页</a>
+                <a href="#slide2" class="text-white hover:text-secondary transition-colors duration-300">加入我们</a>
+                <a href="#slide3" class="text-white hover:text-secondary transition-colors duration-300">部门优势</a>
+                <a href="#slide4" class="text-white hover:text-secondary transition-colors duration-300">活动预告</a>
+                <a href="#slide5" class="text-white hover:text-secondary transition-colors duration-300">招新流程</a>
+                <a href="#slide6" class="text-white hover:text-secondary transition-colors duration-300">联系我们</a>
+            </div>
+            <button id="mobile-menu-trigger" class="mobile-menu-trigger">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+            </nav>
+        
+        <!-- 移动端磨砂玻璃菜单 -->
+        <div id="mobile-menu" class="hidden">
+            <!-- 背景遮罩 -->
+            <div class="mobile-menu-backdrop"></div>
+            
+            <!-- 菜单内容 -->
+            <div class="mobile-menu-content">
+                <!-- 菜单头部 -->
+                <div class="mobile-menu-header">
+                    <div class="mobile-menu-title">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>宣传外联部</span>
+                    </div>
+                    <button id="mobile-menu-close" class="mobile-menu-close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- 菜单导航 -->
+                <nav class="mobile-menu-nav">
+                    <ul>
+                        <li><a href="#slide1" class="mobile-menu-link">首页</a></li>
+                        <li><a href="#slide2" class="mobile-menu-link">投稿区</a></li>
+                        <li><a href="#slide3" class="mobile-menu-link">新闻区</a></li>
+                        <li><a href="#slide4" class="mobile-menu-link">摄影展区</a></li>
+                        <li><a href="#slide5" class="mobile-menu-link">资源服务</a></li>
+                        <li><a href="#slide6" class="mobile-menu-link">其他</a></li>
+                        <li><a href="#slide7" class="mobile-menu-link active">招新活动</a></li>
+                        <li><a href="#slide8" class="mobile-menu-link">部门人员</a></li>
+                        <li><a href="#slide9" class="mobile-menu-link">执勤表</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- 图标区域 -->
+                <div class="mobile-menu-icons">
+                    <div class="icon-row">
+                        <a href="#" class="mobile-menu-icon">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <a href="#" class="mobile-menu-icon">
+                            <i class="fa fa-bell"></i>
+                        </a>
+                        <a href="#" class="mobile-menu-icon">
+                            <i class="fa fa-comment"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 搜索框 -->
+                <div class="mobile-menu-search">
+                    <div class="mobile-search-container">
+                        <input type="text" placeholder="搜索作品..." class="mobile-search-input">
+                        <button class="mobile-search-button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ================ 幻灯片内容 ================ -->
+    <div class="slides-container">
+        <!-- 第一页：封面 -->
+        <div id="slide1" class="slide flex items-center justify-center relative bg-dark overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-20">
+                <div class="absolute top-1/4 left-1/4 w-10 h-10 rounded-full bg-secondary animate-pulse"></div>
+                <div class="absolute top-1/3 right-1/3 w-8 h-8 rounded-full bg-primary animate-pulse" style="animation-delay: 0.5s"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-6 h-6 rounded-full bg-accent animate-pulse" style="animation-delay: 1s"></div>
+                <div class="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full bg-white animate-pulse" style="animation-delay: 1.5s"></div>
+            </div>
+            
+            <div class="content z-10 text-center">
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-black text-white text-shadow-lg mb-6 animate-fade-in">
+                    学生会<span class="text-secondary">宣传外联部</span>招新
+                </h1>
+                <p class="subtitle text-[clamp(1rem, 10vw, 2rem)] text-light opacity-90 text-shadow animate-fade-in" style="animation-delay: 0.3s">
+                    够酷 ， 才出圈！
+                </p>
+            </div>
+            <p class="footer absolute bottom-10 left-0 right-0 text-center text-light opacity-85 animate-fade-in" style="animation-delay: 0.6s">
+                开启你的新征程
+            </p>
+            
+            <!-- 向下滚动指示 -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#slide2" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+                    <i class="fa fa-angle-down text-3xl"></i>
+                </a>
+            </div>
+        </div>
+
+      <!-- 新增页面：欢迎来到大学新生活 -->
+        <div class="university-welcome-container">
+  <div class="content-wrapper">
+    <h1 class="main-title">欢迎来到合肥工业学校新生活！</h1>
+    <p class="subtitle">刚来到学校，你是否想过（有一天）...</p>
+    <div class="card-container">
+      <div class="card" style="animation-delay: 0.2s;">
+        <p><span class="bullet">•</span>用你的镜头，定义校园的C位？</p>
+      </div>
+      <div class="card" style="animation-delay: 0.4s;">
+        <p><span class="bullet">•</span>让你的创意，刷屏全校的朋友圈？</p>
+      </div>
+      <div class="card" style="animation-delay: 0.6s;">
+        <p><span class="bullet">•</span>认识那些最有趣、最有料的人？</p>
+      </div>
+    </div>
+    <p class="footer-text">在宣传外联部，这些都不是梦想</p>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    .university-welcome-container {
+      width: 100%;
+      height: 720px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at 50% 50%, #0a2a4b, #001f3f);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      animation: fadeIn 1.5s ease-in-out;
+      padding: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-title {
+      font-size: 64px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      font-weight: 400;
+      color: #a7c0d8;
+      margin-bottom: 50px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .card {
+      width: 280px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 25px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    .card .bullet {
+      color: #ff9800;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .footer-text {
+      margin-top: 60px;
+      font-size: 24px;
+      font-weight: 500;
+      color: #ffd700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 152, 0, 0.1));
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+        }
+        70% {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px 15px rgba(255, 215, 0, 0);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+        }
+    }
+  </style>
+</div>    
+        <!-- 第二页：加入我们的理由 -->
+        <div id="slide2" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <div class="text-center mb-16">
+                    <h1 class="main-title text-[clamp(2rem,5vw,3.5rem)] font-bold text-white text-shadow mb-4 animate-fade-in">
+                        为什么选择😁
+                    </h1>
+                    <p class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-[#a7c0d8] max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+                        在这里，你将收获成长与友谊
+                    </p>
+                </div>
+                
+                <div class="card-container grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 卡片1 -->
+                    <div class="card bg-glass rounded-xl p-8 border border-white/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="flex items-start">
+                            <div class="text-secondary text-4xl mr-4 mt-1">
+                                <i class="fa fa-comments"></i>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-semibold text-white mb-3">沟通能力🤝</h3>
+                                <p class="text-gray-300">提升沟通能力，与不同的人交流合作，锻炼你的表达和协调能力。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 卡片2 -->
+                    <div class="card bg-glass rounded-xl p-8 border border-white/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.6s">
+                        <div class="flex items-start">
+                            <div class="text-secondary text-4xl mr-4 mt-1">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-semibold text-white mb-3">组织能力🤌</h3>
+                                <p class="text-gray-300">锻炼组织能力，策划和执行各类活动，从构思到落地全程参与。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 卡片3 -->
+                    <div class="card bg-glass rounded-xl p-8 border border-white/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.8s">
+                        <div class="flex items-start">
+                            <div class="text-secondary text-4xl mr-4 mt-1">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-semibold text-white mb-3">人脉资源🙌</h3>
+                                <p class="text-gray-300">拓展人脉资源，结识更多优秀的同学，建立长久的友谊和合作关系。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="footer-text mt-16 inline-block text-[clamp(1.1rem,2vw,1.5rem)] font-medium text-secondary bg-gradient-to-r from-secondary/10 to-accent/10 py-3 px-8 rounded-lg animate-pulse-slow">
+                    期待你的加入！
+                </p>
+            </div>
+        </div>
+
+        <!-- 第三页：部门介绍 -->
+        <div id="slide3" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="left-panel bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-12 shadow-2xl transform transition-transform duration-500 hover:shadow-3xl">
+                        <h1 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-white mb-6 animate-fade-in">
+                            部门优势
+                        </h1>
+                        <p class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-10 animate-fade-in" style="animation-delay: 0.2s">
+                            选择我们，开启不一样的新生活
+                        </p>
+                        
+                        <div class="features-grid grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- 优势1 -->
+                            <div class="feature-card bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transform transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 animate-slide-in-left" style="animation-delay: 0.3s">
+                                <div class="text-2xl text-secondary">🌟</div>
+                                <div class="text-white">丰富的活动经验</div>
+                            </div>
+                            
+                            <!-- 优势2 -->
+                            <div class="feature-card bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transform transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 animate-slide-in-left" style="animation-delay: 0.4s">
+                                <div class="text-2xl text-secondary">💪</div>
+                                <div class="text-white">强大的团队支持</div>
+                            </div>
+                            
+                            <!-- 优势3 -->
+                            <div class="feature-card bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transform transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 animate-slide-in-left" style="animation-delay: 0.5s">
+                                <div class="text-2xl text-secondary">📈</div>
+                                <div class="text-white">广阔的发展空间</div>
+                            </div>
+                            
+                            <!-- 优势4 -->
+                            <div class="feature-card bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transform transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 animate-slide-in-left" style="animation-delay: 0.6s">
+                                <div class="text-2xl text-secondary">🎉</div>
+                                <div class="text-white">愉快的工作氛围</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="right-panel">
+                        <div class="relative">
+                            <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/10 rounded-full"></div>
+                            
+                            <div class="bg-white rounded-2xl shadow-xl p-8 relative z-10">
+                                <h3 class="text-2xl font-bold text-dark mb-6">我们的使命</h3>
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    学生会宣传外联部作为学校与外界沟通的桥梁，致力于通过创新的宣传手段和高效的外联工作，提升学校形象，拓展资源渠道，为同学们创造更多的学习和发展机会。
+                                </p>
+                                
+                                <div class="flex flex-wrap gap-4 mt-8">
+                                    <div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                                        <i class="fa fa-bullhorn"></i>
+                                        <span>宣传推广</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                                        <i class="fa fa-handshake-o"></i>
+                                        <span>对外联络</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                                        <i class="fa fa-camera"></i>
+                                        <span>活动摄影</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                                        <i class="fa fa-paint-brush"></i>
+                                        <span>创意设计</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                                        <i class="fa fa-pencil"></i>
+                                        <span>文案编辑</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四页：团队风采展示 -->
+        <div id="slide4" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <h1 class="main-title text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#1a3a6e] text-shadow mb-6 animate-fade-in"> This is us ！</h1>
+                <h2 class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-[#3f608f] max-w-3xl mx-auto animate-fade-in"
+                    style="animation-delay: 0.2s">青春、专业、有温度的团队</h2>
+
+                <div class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- 成员1 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-4 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://picsum.photos/seed/member1/400/300" alt="团队成员照片" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">缪子粲</h3>
+                                <p class="text-sm opacity-80">摄影组</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-700 mb-4">热爱设计与摄影，擅长活动策划与执行，带领团队完成多项大型活动宣传工作。</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-weixin text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-qq text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-instagram text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 成员2 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-4 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://picsum.photos/seed/member2/400/300" alt="团队成员照片" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">李凤</h3>
+                                <p class="text-sm opacity-80">外联组</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-700 mb-4">出色的沟通能力，擅长与学校其他同以及老师学沟通。</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-weixin text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-qq text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-instagram text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 成员3 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-4 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://picsum.photos/seed/member3/400/300" alt="团队成员照片" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">胡向杰</h3>
+                                <p class="text-sm opacity-80">宣传组</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-700 mb-4">精通各类设计软件，擅长海报制作和新媒体运营，为活动打造吸睛宣传材料。</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-weixin text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-qq text-xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                    <i class="fa fa-instagram text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#slide5" class="btn btn-accent text-lg font-bold">
+                        了解招新流程 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 第五页：五大核心职能 -->
+        <div id="slide5" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white text-shadow mb-12 animate-fade-in">五大核心职能，打造全能创作者</h1>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- 职能1 -->
+                    <div class="card bg-glass p-6 rounded-xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300" style="animation-delay: 0.2s">
+                        <div class="icon text-[#FF9800] text-4xl mb-4">🎬</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">视频制作</h3>
+                        <p class="text-gray-300 text-sm">从升旗仪式到运动会，从毕业典礼到社团活动，用镜头记录校园精彩瞬间，掌握拍摄、剪辑、后期全流程技能。</p>
+                    </div>
+                    
+                    <!-- 职能2 -->
+                    <div class="card bg-glass p-6 rounded-xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300" style="animation-delay: 0.4s">
+                        <div class="icon text-[#FF9800] text-4xl mb-4">📱</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">内屏管理</h3>
+                        <p class="text-gray-300 text-sm">管理学部智能显示系统，每日更新优秀班级展示、节日主题内容，做校园信息的传播者。</p>
+                    </div>
+                    
+                    <!-- 职能3 -->
+                    <div class="card bg-glass p-6 rounded-xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300" style="animation-delay: 0.6s">
+                        <div class="icon text-[#FF9800] text-4xl mb-4">🎨</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">海报设计</h3>
+                        <p class="text-gray-300 text-sm">从活动海报到节日宣传，用视觉语言传达信息，培养设计思维和美学素养。</p>
+                    </div>
+                    
+                    <!-- 职能4 -->
+                    <div class="card bg-glass p-6 rounded-xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300" style="animation-delay: 0.8s">
+                        <div class="icon text-[#FF9800] text-4xl mb-4">✍️</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">新闻撰写</h3>
+                        <p class="text-gray-300 text-sm">捕捉校园热点，撰写新闻稿件，提升文字表达和新闻敏感度。</p>
+                    </div>
+                    
+                    <!-- 职能5 -->
+                    <div class="card bg-glass p-6 rounded-xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300" style="animation-delay: 1.0s">
+                        <div class="icon text-[#FF9800] text-4xl mb-4">🤝</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">活动支持</h3>
+                        <p class="text-gray-300 text-sm">策划执行各类校园活动，锻炼组织协调能力，积累项目管理经验。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第六页：成长收获 -->
+        <div id="slide6" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <div class="header text-center mb-12">
+                    <h1 class="text-4xl font-bold text-white animate-fade-in">在这里，你能收获什么？</h1>
+                    <h2 class="text-xl font-medium text-[#FFA500] mt-2 animate-fade-in" style="animation-delay: 0.2s">从小白到大神的进化之路</h2>
+                </div>
+                
+                <div class="content-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 收获1 -->
+                    <div class="card bg-white/10 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.3s">
+                        <div class="icon text-[#FFA500] text-4xl mb-4">💡</div>
+                        <h3 class="text-xl font-semibold text-[#FFA500] mb-2">硬技能提升</h3>
+                        <p class="text-gray-300 text-sm">掌握PR/FCPX视频剪辑、PS/AI设计软件、摄影技巧、新媒体运营等市场热门技能</p>
+                    </div>
+                    
+                    <!-- 收获2 -->
+                    <div class="card bg-white/10 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.5s">
+                        <div class="icon text-[#FFA500] text-4xl mb-4">🗣️</div>
+                        <h3 class="text-xl font-semibold text-[#FFA500] mb-2">沟通表达</h3>
+                        <p class="text-gray-300 text-sm">通过对接各部门、采访师生、主持活动，全面提升沟通协调和公众表达能力</p>
+                    </div>
+                    
+                    <!-- 收获3 -->
+                    <div class="card bg-white/10 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.7s">
+                        <div class="icon text-[#FFA500] text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-semibold text-[#FFA500] mb-2">项目管理</h3>
+                        <p class="text-gray-300 text-sm">独立负责活动策划执行，培养时间管理、团队协作、问题解决等职场核心能力</p>
+                    </div>
+                    
+                    <!-- 收获4 -->
+                    <div class="card bg-white/10 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.9s">
+                        <div class="icon text-[#FFA500] text-4xl mb-4">🌟</div>
+                        <h3 class="text-xl font-semibold text-[#FFA500] mb-2">个人品牌</h3>
+                        <p class="text-gray-300 text-sm">打造个人作品集，建立专业形象，为未来求职和深造奠定基础</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-container mt-16">
+                    <div class="timeline">
+                        <div class="step">
+                            <div class="circle"></div>
+                            <div class="label">高一 · 基础学习</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle"></div>
+                            <div class="label">高二 · 项目主力</div>
+                        </div>
+                        <div class="step">
+                            <div class="circle"></div>
+                            <div class="label">高三 · 部门管理</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第七页：我们想找这样的你 -->
+        <div id="slide7" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <div class="header text-center mb-12 animate-fade-in">
+                    <h1 class="text-5xl font-bold text-[#FF9800]">我们想找这样的你</h1>
+                    <h2 class="text-xl font-normal text-[#E0E0E0] mt-2">有趣又有料的灵魂</h2>
+                </div>
+                
+                <div class="content-area flex flex-col md:flex-row gap-8 animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="tag bg-[rgba(45,62,89,0.5)] border border-[rgba(255,152,0,0.5)] rounded-full px-6 py-5 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold text-[#FFB74D] mb-2">🎭 沟通达人</h3>
+                        <p class="text-gray-300">不一定要是社交牛B症，但要愿意与人交流，能清晰表达想法，善于倾听他人。</p>
+                    </div>
+                    
+                    <div class="tag bg-[rgba(45,62,89,0.5)] border border-[rgba(255,152,0,0.5)] rounded-full px-6 py-5 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold text-[#FFB74D] mb-2">🎪 靠谱队友</h3>
+                        <p class="text-gray-300">说到做到，敢于承担责任，团队合作时让人放心的那种存在。</p>
+                    </div>
+                    
+                    <div class="tag bg-[rgba(45,62,89,0.5)] border border-[rgba(255,152,0,0.5)] rounded-full px-6 py-5 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold text-[#FFB74D] mb-2">💡 创意脑洞</h3>
+                        <p class="text-gray-300">天马行空的想象力，对新鲜事物保持好奇，敢于尝试和创新。</p>
+                    </div>
+                    
+                    <div class="tag bg-[rgba(45,62,89,0.5)] border border-[rgba(255,152,0,0.5)] rounded-full px-6 py-5 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-semibold text-[#FFB74D] mb-2">⚡ 学习热情</h3>
+                        <p class="text-gray-300">愿意投入时间学习新技能，面对挑战不轻易放弃的小倔强。</p>
+                    </div>
+                </div>
+                
+                <div class="footer mt-12 text-center animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="alert-box bg-[rgba(255,235,204,0.1)] border border-[#FF9800] border-l-4 border-solid rounded-lg p-4">
+                        <p class="text-[#FFE0B2]"><span class="warning-title font-semibold text-[#FF9800] text-xl">⚠️ 友情提醒：</span><br>
+                        如果你想提升自己，那么学生会欢迎你，宣传外联部也欢迎你！但如果你只是想玩玩，那很抱歉我们的缘分就此结束...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第八页：福利待遇 -->
+        <div id="slide8" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <div class="header text-center mb-12">
+                    <h1 class="text-4xl font-bold text-white animate-fade-in">加入我们，你将获得</h1>
+                    <h2 class="text-xl font-medium text-[#FFD700] mt-2 animate-fade-in" style="animation-delay: 0.2s">这些福利，让你的大学生活更精彩</h2>
+                </div>
+                
+                <div class="benefits-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 福利1 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.3s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">🏆</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">荣誉认可</h3>
+                        <p class="text-gray-300 text-sm">优秀干事证书、各类评奖评优优先推荐、综合素质学分加分</p>
+                    </div>
+                    
+                    <!-- 福利2 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.4s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">能力认证</h3>
+                        <p class="text-gray-300 text-sm">参与重大活动证明、技能培训机会、实习推荐信、作品集指导</p>
+                    </div>
+                    
+                    <!-- 福利3 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.5s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">🌐</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">人脉资源</h3>
+                        <p class="text-gray-300 text-sm">结识志同道合的朋友、接触校内外优秀师长、扩展社交圈子</p>
+                    </div>
+                    
+                    <!-- 福利4 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.6s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">💰</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">实际收益</h3>
+                        <p class="text-gray-300 text-sm">活动补贴、技能培训费用报销、优秀作品奖励、部门聚餐福利</p>
+                    </div>
+                    
+                    <!-- 福利5 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.7s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">🚀</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">发展机会</h3>
+                        <p class="text-gray-300 text-sm">部门干部竞选机会、校级活动参与权、对外交流学习机会</p>
+                    </div>
+                    
+                    <!-- 福利6 -->
+                    <div class="card bg-white/20 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" style="animation-delay: 0.8s">
+                        <div class="icon text-[#FFD700] text-4xl mb-4">🎉</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">专属体验</h3>
+                        <p class="text-gray-300 text-sm">幕后参与重大活动、独家校园资讯、部门定制周边、团建活动</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第九页：精彩活动（美化版玻璃风格） -->
+        <div id="slide9" class="slide flex items-center justify-center">
+          <style>
+            #slide9 {
+              background: linear-gradient(135deg, #e0e7ef 0%, #f5f7fa 100%);
+              min-height: 100vh;
+              position: relative;
+              overflow: hidden;
+            }
+            #slide9::before {
+              content: "";
+              position: absolute;
+              left: 10%;
+              top: 10%;
+              width: 300px;
+              height: 300px;
+              background: radial-gradient(circle, #b3cfff55 0%, #fff0 80%);
+              filter: blur(40px);
+              z-index: 0;
+            }
+            #slide9::after {
+              content: "";
+              position: absolute;
+              right: 10%;
+              bottom: 10%;
+              width: 200px;
+              height: 200px;
+              background: radial-gradient(circle, #ffd70055 0%, #fff0 80%);
+              filter: blur(30px);
+              z-index: 0;
+            }
+            #slide9 .glass-card {
+              background: rgba(255,255,255,0.28);
+              border-radius: 20px;
+              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+              backdrop-filter: blur(18px) saturate(180%);
+              -webkit-backdrop-filter: blur(18px) saturate(180%);
+              border: 1.5px solid rgba(255,255,255,0.28);
+              color: #222;
+              margin-bottom: 24px;
+              transition: transform 0.3s, box-shadow 0.3s;
+            }
+            #slide9 .glass-card:hover {
+              transform: translateY(-8px) scale(1.03);
+              box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.22);
+            }
+            #slide9 .glass-card h3 {
+              font-weight: 700;
+              font-size: 1.2rem;
+              background: linear-gradient(90deg, #3A6BFF, #FFD700);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              margin-bottom: 8px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            }
+            #slide9 .glass-card span.icon {
+              font-size: 2.2rem;
+              filter: drop-shadow(0 0 8px #ffd70088);
+              margin-right: 8px;
+            }
+            #slide9 .glass-card strong {
+              color: #FFD700;
+            }
+            #slide9 .timeline-section {
+              margin-top: 0;
+              background: rgba(255,255,255,0.22);
+              border-radius: 20px;
+              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+              backdrop-filter: blur(14px) saturate(160%);
+              -webkit-backdrop-filter: blur(14px) saturate(160%);
+              border: 1.5px solid rgba(255,255,255,0.18);
+              padding: 32px 24px;
+            }
+            #slide9 .timeline-section h2 {
+              background: linear-gradient(90deg,#3A6BFF,#FFD700);
+              -webkit-background-clip:text;
+              -webkit-text-fill-color:transparent;
+              font-weight: 700;
+            }
+            #slide9 .timeline-container {
+              position: relative;
+              margin-top: 32px;
+              padding-left: 32px;
+            }
+            #slide9 .timeline-line {
+              background: linear-gradient(180deg, #3A6BFF 0%, #FFD700 100%);
+              width: 6px;
+              border-radius: 3px;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+            }
+            #slide9 .timeline-item {
+              position: relative;
+              margin-bottom: 32px;
+              padding-left: 32px;
+              display: flex;
+              align-items: center;
+            }
+            #slide9 .timeline-item:last-child {
+              margin-bottom: 0;
+            }
+            #slide9 .circle {
+              background: #fff;
+              border: 3px solid #FFD700;
+              box-shadow: 0 0 12px #FFD70088;
+              width: 18px;
+              height: 18px;
+              border-radius: 50%;
+              position: absolute;
+              left: -9px;
+              top: 50%;
+              transform: translateY(-50%);
+              z-index: 2;
+            }
+            #slide9 .timeline-content {
+              font-weight: 600;
+              color: #3A6BFF;
+              margin-left: 12px;
+            }
+            @media (max-width: 900px) {
+              #slide9 .main-content {
+                flex-direction: column;
+              }
+              #slide9 .timeline-section {
+                margin-top: 32px;
+              }
+            }
+          </style>
+          <div class="container mx-auto px-6 z-10">
+            <div class="header text-center mb-12 animate-fade-in">
+              <h1 class="text-5xl font-bold" style="background: linear-gradient(90deg,#3A6BFF,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">我们的高光时刻</h1>
+              <p class="text-xl font-normal text-gray-600 mt-2">用作品说话，让成就见证成长</p>
+            </div>
+            <div class="main-content flex flex-col md:flex-row gap-8 animate-fade-in" style="animation-delay: 0.3s">
+              <div class="achievements-section flex-1">
+                <div class="glass-card p-6 mb-5">
+                  <h3><span class="icon">🎬</span> 视频作品</h3>
+                  <p>制作升旗仪式、运动会、毕业典礼等宣传片，累计播放量<strong>过万</strong></p>
+                </div>
+                <div class="glass-card p-6 mb-5">
+                  <h3><span class="icon">🎨</span> 设计作品</h3>
+                  <p>设计各类活动海报、节日宣传图，成为校园视觉标识的主要创作者</p>
+                </div>
+                <div class="glass-card p-6 mb-5">
+                  <h3><span class="icon">📱</span> 新媒体运营</h3>
+                  <p>管理学部内屏系统，每日更新内容，打造校园信息传播的重要窗口</p>
+                </div>
+                <div class="glass-card p-6 mb-5">
+                  <h3><span class="icon">✍️</span> 新闻报道</h3>
+                  <p>撰写校园新闻稿件，记录学部重要活动，传播正能量，展现学部风采</p>
+                </div>
+                <div class="glass-card p-6">
+                  <h3><span class="icon">🏆</span> 获奖荣誉</h3>
+                  <p>部门多次获得<strong>"优秀学生组织"</strong>称号，成员在各类比赛中屡获佳绩</p>
+                </div>
+              </div>
+              <div class="timeline-section flex-1">
+                <h2 class="text-2xl font-semibold text-center mb-6 border-b border-[#FFD700] pb-2">📅 2024年重大活动参与记录</h2>
+                <div class="timeline-container relative">
+                  <div class="timeline-line absolute"></div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">9月开学典礼视频制作</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">10月运动会全程宣传</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">11月家长会接待服务</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">12月毕业欢送会策划</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">春季资助宣传活动</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="timeline-content">夏季招生宣传支持</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第十页：2025学年精彩预告 -->
+        <div id="slide10" class="slide min-h-screen flex items-center justify-center">
+    <!-- 内联样式，仅作用于当前页面 -->
+    <style>
+        /* 当前页面特定的样式 */
+        #slide10 {
+            background: linear-gradient(135deg, #1a2a45, #101a2d);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #slide10 .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        #slide10 .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        #slide10 .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: #B0B0B0;
+            margin-top: 10px;
+        }
+
+        #slide10 .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        #slide10 .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        #slide10 .card:nth-child(1) { animation-delay: 0.2s; }
+        #slide10 .card:nth-child(2) { animation-delay: 0.3s; }
+        #slide10 .card:nth-child(3) { animation-delay: 0.4s; }
+        #slide10 .card:nth-child(4) { animation-delay: 0.5s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #slide10 .card-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #EAEAEA;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+        }
+
+        #slide10 .card-title span {
+            margin-right: 10px;
+        }
+
+        #slide10 .card ul {
+            list-style: none;
+            padding-left: 5px;
+            margin: 0;
+            color: #C0C0C0;
+            font-size: 16px;
+            line-height: 1.8;
+            flex-grow: 1;
+        }
+
+        #slide10 .card ul li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        #slide10 .card ul li::before {
+            content: '•';
+            color: #FFD700;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #slide10 .routine-work-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 15px;
+        }
+
+        #slide10 .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #slide10 .timeline-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #C0C0C0;
+            position: relative;
+            z-index: 1;
+            width: 30%;
+        }
+
+        #slide10 .timeline-step .period {
+            font-size: 18px;
+            font-weight: 500;
+            color: #EAEAEA;
+            background-color: #3a3a3a;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #FFD700;
+        }
+
+        #slide10 .timeline-step .description {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            #slide10 .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #slide10 .timeline-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            #slide10 .timeline-step {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="container mx-auto px-6 z-10">
+        <div class="header">
+            <h1 class="main-title">2025学年精彩预告</h1>
+            <p class="subtitle">与我们一起，记录青春每一刻</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h3 class="card-title"><span>🍂</span> 秋季亮点 (9-12月)</h3>
+                <ul>
+                    <li>开学典礼视频制作</li>
+                    <li>军训成果展示</li>
+                    <li>运动会全程宣传</li>
+                    <li>家长会接待服务</li>
+                    <li>文艺汇演策划</li>
+                    <li>毕业生欢送活动</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><span>🌸</span> 春季亮点 (2-6月)</h3>
+                <ul>
+                    <li>学雷锋主题活动</li>
+                    <li>春季招聘会支持</li>
+                    <li>青年节庆典策划</li>
+                    <li>技能大赛宣传</li>
+                    <li>期末助力活动</li>
+                    <li>学年总结表彰</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><span>📅</span> 常规工作</h3>
+                <ul class="routine-work-list">
+                    <li><span>📱</span> 每周内屏内容更新</li>
+                    <li><span>✍️</span> 月度校园新闻撰写</li>
+                    <li><span>🎨</span> 节日主题海报设计</li>
+                    <li><span>🤝</span> 各部门活动支持</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><span>📈</span> 你的成长时间表</h3>
+                <div class="timeline-container">
+                    <div class="timeline-step">
+                        <div class="period">第09-10月</div>
+                        <div class="description">熟悉部门<br>学习基础技能</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="period">第10-11月</div>
+                        <div class="description">参与项目<br>积累实战经验</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="period">第11-01月</div>
+                        <div class="description">独当一面<br>展现个人能力</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 第十一页：如何加入我们 -->
+        <div id="slide11" class="slide flex items-center justify-center">
+            <div class="container mx-auto px-6 z-10">
+                <div class="header text-center mb-12 animate-fade-in">
+                    <h1 class="text-5xl font-bold text-white">如何加入我们？</h1>
+                    <p class="text-xl font-normal text-[#C0C0C0] mt-2">三步搞定，开启你的创作之旅</p>
+                </div>
+                
+                <div class="main-content flex flex-col md:flex-row gap-12">
+                    <div class="process-flow flex-1">
+                        <div class="step bg-white/20 rounded-xl p-5 mb-5 flex items-center gap-4">
+                            <div class="step-icon text-white text-4xl font-bold flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#FF9A9E] to-[#FAD0C4] rounded-full">1</div>
+                            <div class="step-content">
+                                <h3 class="text-xl font-semibold text-white mb-2">了解我们</h3>
+                                <p class="text-gray-300">扫码关注部门信息，了解详细职能和要求</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step bg-white/20 rounded-xl p-5 mb-5 flex items-center gap-4">
+                            <div class="step-icon text-white text-4xl font-bold flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#84FAB0] to-[#8FD3F4] rounded-full">2</div>
+                            <div class="step-content">
+                                <h3 class="text-xl font-semibold text-white mb-2">填写申请</h3>
+                                <p class="text-gray-300">填写纸质申请表格，展示你的个人特色和加入意愿</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step bg-white/20 rounded-xl p-5 flex items-center gap-4">
+                            <div class="step-icon text-white text-4xl font-bold flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#A1C4FD] to-[#C2E9FB] rounded-full">3</div>
+                            <div class="step-content">
+                                <h3 class="text-xl font-semibold text-white mb-2">面试交流</h3>
+                                <p class="text-gray-300">参加面试，与我们面对面交流，展现你的潜力</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar flex-1 flex flex-col gap-8">
+                        <div class="info-box bg-white/20 rounded-xl p-6">
+                            <p class="text-gray-300 mb-2"><span class="text-xl mr-2">📍</span> 申请表送达地址：<a href="https://maps.baidu.com/search/合肥工业学校办109学生会办公室" target="_blank" class="address-link">办109学生会办公室</a></p>
+                            <p class="text-gray-300 mb-2"><span class="text-xl mr-2">⏰</span> 报名截止时间：2025年9月20日</p>
+                            <p class="text-gray-300 mb-2"><span class="text-xl mr-2">📱</span> 咨询QQ群：[招新咨询群号]</p>
+                            <p class="text-gray-300"><span class="text-xl mr-2">📞</span> 联系人：部长 / 副部长</p>
+                        </div>
+                        
+                        <div class="tips-card bg-[#FFFBEF] rounded-xl p-6">
+                            <h4 class="text-xl font-semibold text-[#E67E22] mb-4">💡 面试小贴士：</h4>
+                            <ul class="text-gray-600 list-disc list-inside">
+                                <li>准备一个简短的自我介绍</li>
+                                <li>可以带上你的作品集（如有）</li>
+                                <li>展现真实的自己，我们看重潜力而非经验</li>
+                                <li>提前思考为什么想加入宣传外联部</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+               <!-- 第四页：活动预告 -->
+        <div id="slide4" class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+          <div class="container mx-auto px-6 py-12">
+            <div class="text-center mb-16">
+              <h1 class="main-title text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark text-shadow mb-4 animate-fade-in">
+                精彩活动预告
+              </h1>
+              <p class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-gray-600 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+                加入我们，一起参与这些令人期待的活动
+              </p>
+            </div>
+            
+            <div class="events-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- 活动1 -->
+              <div class="event-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.3s">
+                <div class="event-image h-48 overflow-hidden">
+                  <img src="http://m.qpic.cn/psc?/V54ab0PV45FSTv42VwCi0aznpO1CVkkR/LiySpxowE0yeWXwBdXN*SelAbaQiDwmL0Lnr*mG0HfARc5IgP39GRtPu1El4P.w72Aj9oYY4cy5JnGlhQDYnXycuo3e42D5rmGOa97cax0g!/b&bo=6QRHA.kERwMBByA!&rf=viewer_4" alt="校园文化节" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="event-content p-6">
+                  <div class="event-date text-sm text-gray-500 mb-2">
+                    <i class="fa fa-calendar mr-2"></i>2025年05月16日
+                  </div>
+                  <h3 class="event-title text-xl font-semibold text-dark mb-3">校园文化节</h3>
+                  <p class="event-description text-gray-600 mb-4">
+                    展示校园文化的多样性，包含文艺表演、手工艺品展览、美食体验等活动。
+                  </p>
+                  <div class="event-tags flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">文艺</span>
+                    <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">文化</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">艺术</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">
+                      <i class="fa fa-map-marker mr-1"></i> 学校体育馆
+                    </span>
+                    <button class="text-primary hover:text-primary/80 transition-colors">
+                      了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 活动2 -->
+              <div class="event-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.5s">
+                <div class="event-image h-48 overflow-hidden">
+                  <img src="http://m.qpic.cn/psc?/V54ab0PV45FSTv42VwCi0aznpO1CVkkR/LiySpxowE0yeWXwBdXN*SelexkPG0dKq4VycGEGjw2YNGY0Vy2iUvxHHHUsE64bdsTXRUsXKSO27RK4egsXzEWVS0yFeMRkye*TTZeC4GNM!/b&bo=gAcABYAHAAUBByA!&rf=viewer_4" alt="运动会" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="event-content p-6">
+                  <div class="event-date text-sm text-gray-500 mb-2">
+                    <i class="fa fa-calendar mr-2"></i>2025年10月10日
+                  </div>
+                  <h3 class="event-title text-xl font-semibold text-dark mb-3">运动会</h3>
+                  <p class="event-description text-gray-600 mb-4">
+                    发掘运动潜能 talent，提供展示舞台，感受运动的魅力。
+                  </p>
+                  <div class="event-tags flex flex-wrap gap-2 mb-4">
+                    <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">运动</span>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">比赛</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">
+                      <i class="fa fa-map-marker mr-1"></i> 学校操场
+                    </span>
+                    <button class="text-primary hover:text-primary/80 transition-colors">
+                      了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 活动3 -->
+              <div class="event-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.7s">
+                <div class="event-image h-48 overflow-hidden">
+                  <img src="http://m.qpic.cn/psc?/V54ab0PV45FSTv42VwCi0aznpO1CVkkR/LiySpxowE0yeWXwBdXN*SYAjIk1Ea3kMmxHOi4SeNmHCOEy6xHuPnNaz1pnJi6UrZ2kiwbNb9Q2Zm*vOJhUmz2gU8XUes6CYgOFsesic8Ds!/b&bo=YAlABmAJQAYBByA!&rf=viewer_4" alt="学部日常活动" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="event-content p-6">
+                  <div class="event-date text-sm text-gray-500 mb-2">
+                    <i class="fa fa-calendar mr-2"></i>不定时
+                  </div>
+                  <h3 class="event-title text-xl font-semibold text-dark mb-3">学部日常活动</h3>
+                  <p class="event-description text-gray-600 mb-4">
+                    分享经验，拓展友谊，交流学习。
+                  </p>
+                  <div class="event-tags flex flex-wrap gap-2 mb-4">
+                    <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">会议</span>
+                    <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">交流</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">
+                      <i class="fa fa-map-marker mr-1"></i> 学部一楼阶梯教室
+                    </span>
+                    <button class="text-primary hover:text-primary/80 transition-colors">
+                      了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center mt-12">
+              <button class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                查看更多活动 <i class="fa fa-angle-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第五页：招新流程 -->
+        <div id="slide5" class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+          <div class="container mx-auto px-6 py-12">
+            <div class="text-center mb-16">
+              <h1 class="main-title text-[clamp(2rem,5vw,3.5rem)] font-bold text-white text-shadow mb-4 animate-fade-in">
+                招新流程
+              </h1>
+              <p class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-gray-300 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+                加入我们的步骤，每一步都值得期待
+              </p>
+            </div>
+            
+            <div class="timeline relative max-w-4xl mx-auto">
+              <!-- 时间线 -->
+              <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-secondary to-accent"></div>
+              
+              <!-- 步骤1 -->
+              <div class="timeline-item mb-16 relative">
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-secondary border-4 border-gray-900 z-10"></div>
+                <div class="timeline-content flex flex-col md:flex-row items-center">
+                  <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold text-secondary mb-2 animate-fade-in" style="animation-delay: 0.3s">线上报名</h3>
+                    <p class="text-gray-300 animate-fade-in" style="animation-delay: 0.4s">
+                      填写报名表，提交个人信息和申请理由，报名时间为9月10日至9月12日。
+                    </p>
+                    <div class="mt-4 inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-lg animate-fade-in" style="animation-delay: 0.5s">
+                      <i class="fa fa-calendar-o mr-2"></i>9月10日 - 9月12日
+                    </div>
+                  </div>
+                  <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                    <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-700 animate-fade-in" style="animation-delay: 0.6s">
+                      <p class="text-gray-300 mb-4">点击下方按钮填写报名表：</p>
+                      <button class="px-6 py-2 bg-secondary text-gray-900 rounded-lg hover:bg-secondary/90 transition-colors">
+                        立即报名 <i class="fa fa-paper-plane ml-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 步骤2 -->
+              <div class="timeline-item mb-16 relative">
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-secondary border-4 border-gray-900 z-10"></div>
+                <div class="timeline-content flex flex-col md:flex-row items-center">
+                  <div class="md:w-1/2 md:pr-12 order-2 md:order-1 mt-4 md:mt-0">
+                    <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-700 animate-fade-in" style="animation-delay: 0.8s">
+                      <p class="text-gray-300 mb-4">面试分为初试和复试，主要考察你的沟通能力、创意和团队协作精神。</p>
+                      <ul class="text-gray-300 space-y-2">
+                        <li><i class="fa fa-check-circle text-secondary mr-2"></i>准备简短自我介绍</li>
+                        <li><i class="fa fa-check-circle text-secondary mr-2"></i>展示你的特长或作品</li>
+                        <li><i class="fa fa-check-circle text-secondary mr-2"></i>准备3-4个问题提问</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="md:w-1/2 md:pl-12 md:text-left mb-8 md:mb-0 order-1 md:order-2">
+                    <h3 class="text-xl font-semibold text-secondary mb-2 animate-fade-in" style="animation-delay: 0.6s">面试环节</h3>
+                    <p class="text-gray-300 animate-fade-in" style="animation-delay: 0.7s">
+                      初试时间为9月15日，复试时间为9月20日，具体时间地点将通过短信通知。
+                    </p>
+                    <div class="mt-4 inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-lg animate-fade-in" style="animation-delay: 0.8s">
+                      <i class="fa fa-calendar-o mr-2"></i>9月15日 - 9月20日
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 步骤3 -->
+              <div class="timeline-item mb-16 relative">
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-secondary border-4 border-gray-900 z-10"></div>
+                <div class="timeline-content flex flex-col md:flex-row items-center">
+                  <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold text-secondary mb-2 animate-fade-in" style="animation-delay: 0.9s">实践考核</h3>
+                    <p class="text-gray-300 animate-fade-in" style="animation-delay: 1.0s">
+                      通过面试的同学将参与一次实际项目，体验部门工作流程，时间为9月25日。
+                    </p>
+                    <div class="mt-4 inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-lg animate-fade-in" style="animation-delay: 1.1s">
+                      <i class="fa fa-calendar-o mr-2"></i>9月25日
+                    </div>
+                  </div>
+                  <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                    <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-700 animate-fade-in" style="animation-delay: 1.2s">
+                      <p class="text-gray-300 mb-4">实践考核内容：</p>
+                      <ul class="text-gray-300 space-y-2">
+                        <li><i class="fa fa-pencil text-secondary mr-2"></i>根据给定主题制作宣传海报</li>
+                        <li><i class="fa fa-camera text-secondary mr-2"></i>参与校园活动摄影</li>
+                        <li><i class="fa fa-comments text-secondary mr-2"></i>协助组织小型活动</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 步骤4 -->
+              <div class="timeline-item relative">
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-secondary border-4 border-gray-900 z-10"></div>
+                <div class="timeline-content flex flex-col md:flex-row items-center">
+                  <div class="md:w-1/2 md:pr-12 order-2 md:order-1 mt-4 md:mt-0">
+                    <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-700 animate-fade-in" style="animation-delay: 1.4s">
+                      <p class="text-gray-300 mb-4">我们将通过短信和邮件通知录取结果，加入我们的大家庭！</p>
+                      <div class="flex justify-center mt-4">
+                        <div class="text-5xl text-secondary animate-pulse">🎉</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:w-1/2 md:pl-12 md:text-left mb-8 md:mb-0 order-1 md:order-2">
+                    <h3 class="text-xl font-semibold text-secondary mb-2 animate-fade-in" style="animation-delay: 1.3s">录取通知</h3>
+                    <p class="text-gray-300 animate-fade-in" style="animation-delay: 1.4s">
+                      最终录取名单将于9月x日公布，通过者将收到录取实习通知。
+                    </p>
+                    <div class="mt-4 inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-lg animate-fade-in" style="animation-delay: 1.5s">
+                      <i class="fa fa-calendar-o mr-2"></i>9月10日
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第六页：联系我们 -->
+        <div id="slide6" class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-blue-800 text-white">
+          <div class="container mx-auto px-6 py-12">
+            <div class="text-center mb-16">
+              <h1 class="main-title text-[clamp(2rem,5vw,3.5rem)] font-bold text-white text-shadow mb-4 animate-fade-in">
+                联系我们
+              </h1>
+              <p class="subtitle text-[clamp(1rem,2vw,1.25rem)] text-blue-100 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+                有任何疑问，欢迎随时联系我们
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div class="contact-info bg-white/10 backdrop-filter backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-xl animate-fade-in-up" style="animation-delay: 0.4s">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                  <i class="fa fa-info-circle text-secondary mr-3"></i> 部门信息
+                </h3>
+                
+                <div class="space-y-6">
+                  <div class="flex items-start">
+                    <div class="text-secondary text-xl mr-4 mt-1">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-white">办公地点</h4>
+                      <p class="text-blue-100">建工楼103办公室</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="text-secondary text-xl mr-4 mt-1">
+                      <i class="fa fa-weixin"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-white">官方微信公众号</h4>
+                      <p class="text-blue-100">关注公众号：合工校建工宣传外联部</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="text-secondary text-xl mr-4 mt-1">
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-white">电子邮箱</h4>
+                                              <p class="text-blue-100"><a href="mailto:jgxcwlb@163.com" class="email-link">jgxcwlb@163.com</a></p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <div class="text-secondary text-xl mr-4 mt-1">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-white">联系电话</h4>
+                      <p class="text-blue-100">倪同学：2375945756 (QQ)</p>
+                      <p class="text-blue-100">江同学：135463200  (QQ)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mt-8">
+                  <h4 class="font-medium text-white mb-4">关注我们的社交媒体</h4>
+                  <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition-all duration-300">
+                      <i class="fa fa-weixin"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition-all duration-300">
+                      <i class="fa fa-weibo"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition-all duration-300">
+                      <i class="fa fa-qq"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition-all duration-300">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-form bg-white/10 backdrop-filter backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-xl animate-fade-in-up" style="animation-delay: 0.6s">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                  <i class="fa fa-comment text-secondary mr-3"></i> 留言咨询
+                </h3>
+                
+                <form class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="name" class="block text-sm font-medium text-blue-100 mb-2">姓名</label>
+                      <input type="text" id="name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-white" placeholder="请输入您的姓名">
+                    </div>
+                    <div>
+                      <label for="phone" class="block text-sm font-medium text-blue-100 mb-2">电话</label>
+                      <input type="tel" id="phone" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-white" placeholder="请输入您的电话">
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-blue-100 mb-2">邮箱</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-white" placeholder="请输入您的邮箱">
+                  </div>
+                  
+                  <div>
+                    <label for="message" class="block text-sm font-medium text-blue-100 mb-2">留言内容</label>
+                    <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-white" placeholder="请输入您的留言内容..."></textarea>
+                  </div>
+                  
+                  <div class="flex items-center">
+                    <input type="checkbox" id="agree" class="w-4 h-4 text-secondary bg-white/10 border-white/20 rounded focus:ring-secondary">
+                    <label for="agree" class="ml-2 text-sm text-blue-100">我同意接收部门最新资讯</label>
+                  </div>
+                  
+                  <button type="submit" class="w-full py-3 bg-secondary text-gray-900 font-medium rounded-lg hover:bg-secondary/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center">
+                    <i class="fa fa-paper-plane mr-2"></i> 提交留言
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="bg-dark text-white py-12">
+          <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 class="text-xl font-bold mb-4">学生会宣传外联部</h3>
+                <p class="text-gray-400 mb-4">
+                  我们是学校与外界沟通的桥梁，用创意和热情打造精彩校园生活！
+                </p>
+                <div class="flex space-x-4">
+                  <a href="https://www.wechat.com/你的账号/" 
+                   class="text-gray-400 hover:text-secondary transition-colors"
+                   aria-label="访问我的Instagram主页"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-weixin text-xl"></i>
+                    </a>
+                  <a href="https://www.weibo.com/你的账号/" 
+                   class="text-gray-400 hover:text-secondary transition-colors"
+                   aria-label="访问我的Weibo主页"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-weibo text-xl"></i>
+                    </a>
+                  <a href="https://user.qzone.qq.com/3806700911" 
+                   class="text-gray-400 hover:text-secondary transition-colors"
+                   aria-label="访问qq部门动态号主页"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-qq text-xl"></i>
+                    </a>
+                  <a href="https://www.instagram.com/你的账号/" 
+                   class="text-gray-400 hover:text-secondary transition-colors"
+                   aria-label="访问我的Instagram主页"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-instagram text-xl"></i>
+                    </a>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                <ul class="space-y-2">
+                  <li><a href="#slide1" class="text-gray-400 hover:text-secondary transition-colors">首页</a></li>
+                  <li><a href="#slide2" class="text-gray-400 hover:text-secondary transition-colors">加入我们</a></li>
+                  <li><a href="#slide3" class="text-gray-400 hover:text-secondary transition-colors">部门优势</a></li>
+                  <li><a href="#slide4" class="text-gray-400 hover:text-secondary transition-colors">活动预告</a></li>
+                  <li><a href="#slide5" class="text-gray-400 hover:text-secondary transition-colors">招新流程</a></li>
+                  <li><a href="#slide6" class="text-gray-400 hover:text-secondary transition-colors">联系我们</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold mb-4">订阅我们</h3>
+                <p class="text-gray-400 mb-4">
+                  订阅我们的通讯，获取最新活动和招新信息
+                </p>
+                <form class="flex">
+                  <input type="email" placeholder="输入您的邮箱" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                  <button type="submit" class="bg-secondary text-gray-900 px-4 py-2 rounded-r-lg hover:bg-secondary/90 transition-colors">
+                    订阅
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+              <p> © 2025 学生会宣传外联部. 保留所有权利.</p>
+            </div>
+          </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="../js/recruitment.js"></script>
+
+        <!-- 联系我们表单提交 -->
+        <script>
+        document.querySelectorAll('form').forEach(form => {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 获取表单数据
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+
+            // 判断是留言还是订阅
+            let api = '/api/contact';
+            if (form.querySelector('button[type=submit]').textContent.includes('订阅')) {
+              api = '/api/subscribe';
+            }
+
+            fetch(api, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            }).then(res => res.json())
+              .then(resp => {
+                alert(resp.message || '提交成功！');
+                form.reset();
+              }).catch(() => {
+                alert('提交失败，请稍后再试');
+              });
+          });
+        });
+        </script>
+    </body>
+    </html>
+    

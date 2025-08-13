@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学习资料工具箱</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/resources.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="toolbox-dark">
+    <div class="toolbox-header">
+        <button class="toolbox-back" onclick="window.location.href='../resources.html'"><i class="fas fa-arrow-left"></i> 返回资源服务</button>
+        <div class="toolbox-title">学习资料工具箱</div>
+        <div class="toolbox-search"><input id="searchInput" type="text" placeholder="搜索资料..." oninput="filterItems()"></div>
+    </div>
+    <div class="toolbox-categories">
+        <button class="toolbox-category active" onclick="filterCategory('全部')">全部</button>
+        <button class="toolbox-category" onclick="filterCategory('摄影')">摄影</button>
+        <button class="toolbox-category" onclick="filterCategory('文案')">文案</button>
+        <button class="toolbox-category" onclick="filterCategory('数据分析')">数据分析</button>
+        <button class="toolbox-category" onclick="filterCategory('教程')">教程</button>
+        <button class="toolbox-category" onclick="filterCategory('指南')">指南</button>
+    </div>
+    <div class="toolbox-container glass-dark">
+        <div class="toolbox-grid" id="toolboxGrid">
+            <div class="toolbox-item" data-category="摄影,教程" data-name="摄影技巧指南" onclick="window.open('../../downloads/photography-guide.pdf')">
+                <div class="toolbox-icon"><i class="fas fa-camera"></i></div>
+                <div class="toolbox-name">摄影技巧指南</div>
+                <div class="toolbox-meta">PDF · 2小时</div>
+                <div class="toolbox-tags"><span class="toolbox-tag">摄影</span><span class="toolbox-tag">教程</span></div>
+                <div class="toolbox-desc2">从基础构图到高级技巧，全面提升摄影水平</div>
+            </div>
+            <!-- 更多资料项可在此添加，需带data-category和data-name属性 -->
+        </div>
+    </div>
+    <script>
+    function filterItems() {
+        var input = document.getElementById('searchInput').value.toLowerCase();
+        var items = document.querySelectorAll('.toolbox-item');
+        items.forEach(function(item) {
+            var name = item.getAttribute('data-name').toLowerCase();
+            item.style.display = name.includes(input) ? '' : 'none';
+        });
+    }
+    function filterCategory(cat) {
+        document.querySelectorAll('.toolbox-category').forEach(btn=>btn.classList.remove('active'));
+        Array.from(document.querySelectorAll('.toolbox-category')).find(btn=>btn.textContent===cat).classList.add('active');
+        var items = document.querySelectorAll('.toolbox-item');
+        items.forEach(function(item) {
+            var cats = item.getAttribute('data-category').split(',');
+            if(cat==='全部'||cats.includes(cat)) item.style.display='';
+            else item.style.display='none';
+        });
+        filterItems();
+    }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,428 @@
+/* 部门人员介绍页面样式 */
+
+/* 页面标题区域 */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* 通用区域样式 */
+.teachers-section,
+.leaders-section,
+.groups-section,
+.contact-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* 指导老师卡片 */
+.teachers-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 60px 0 40px 0;
+}
+.teachers-grid {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.teacher-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(102,126,234,0.10);
+    padding: 32px 28px 24px 28px;
+    min-width: 220px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+}
+.teacher-card:hover {
+    box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+    transform: translateY(-8px) scale(1.04);
+}
+.teacher-avatar .placeholder-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+}
+.teacher-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+.teacher-title {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.teacher-desc {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.teacher-contact span {
+    display: inline-block;
+    margin: 0 8px 0 0;
+    color: #888;
+    font-size: 0.98rem;
+}
+
+/* 部门领导卡片 */
+.leaders-section {
+    background: #f8fafc;
+    padding: 60px 0 40px 0;
+}
+.leaders-grid {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.leader-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(102,126,234,0.10);
+    padding: 32px 28px 24px 28px;
+    min-width: 220px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+}
+.leader-card:hover {
+    box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+    transform: translateY(-8px) scale(1.04);
+}
+.leader-avatar .placeholder-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(67,233,123,0.10);
+}
+.leader-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+.leader-title {
+    color: #764ba2;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.leader-desc {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.leader-stats span, .leader-contact span {
+    display: block;
+    color: #888;
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+}
+.leader-contact span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* 工作小组卡片 */
+.groups-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 60px 0 40px 0;
+}
+.groups-grid {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+@media (min-width: 1100px) {
+  .groups-grid {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .group-card {
+    flex: 1 1 0;
+    max-width: 320px;
+}
+}
+.group-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(102,126,234,0.10);
+    padding: 32px 28px 24px 28px;
+    min-width: 220px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+}
+.group-card:hover {
+    box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+    transform: translateY(-8px) scale(1.04);
+}
+.group-header .group-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff5858 0%, #f09819 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 2px 8px rgba(255,88,88,0.10);
+}
+.group-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+.group-desc {
+    color: #888;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+}
+.group-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.member-item {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.06);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.member-item:hover {
+    box-shadow: 0 6px 18px rgba(102,126,234,0.12);
+    transform: scale(1.04);
+}
+.member-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #ffd700 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #fff;
+}
+.member-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.member-info p {
+    color: #888;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* 联系方式区域 */
+.contact-section {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.contact-section .section-title {
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .teachers-grid,
+    .leaders-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .groups-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .teacher-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .teacher-contact {
+        align-items: center;
+    }
+    
+    .leader-stats,
+    .leader-contact {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 60px 0 40px;
+    }
+    
+    .teachers-section,
+    .leaders-section,
+    .groups-section,
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .teacher-card,
+    .leader-card,
+    .group-card,
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+    .placeholder-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+} 
